@@ -1,9 +1,440 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="27.1.6">
   <diagram name="Page-1" id="bcl8wO3U9w0lB4UExMWa">
-    <mxGraphModel>
+    <mxGraphModel dx="1572" dy="902" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-1" value="&lt;font size=&quot;3&quot;&gt;&lt;b&gt;JBCCI CMS&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Two Modules - General User &amp;amp; Admin&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;React + Flask + PostGresql&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="21" y="31" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-2" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-5" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="280" as="sourcePoint" />
+            <mxPoint x="150" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-6" value="Landing Page" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="310" as="sourcePoint" />
+            <mxPoint x="210" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-8" value="Hero Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="370" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GisgOL_p4xpqqTGhm8oK-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="500" as="sourcePoint" />
+            <mxPoint x="210" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-10" value="About Section&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Leads to About Us Page)&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="440" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="209.5" y="490" as="sourcePoint" />
+            <mxPoint x="209.5" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-12" value="Latest Board Members" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="540" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="209.5" y="560" as="sourcePoint" />
+            <mxPoint x="209.5" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-15" value="Statictics of Membership Companies" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="620" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="209.5" y="640" as="sourcePoint" />
+            <mxPoint x="209.5" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-17" value="Background and Formation Info" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="209.5" y="730" as="sourcePoint" />
+            <mxPoint x="210" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-20" value="Be our Member" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="730" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-21" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="740" as="sourcePoint" />
+            <mxPoint x="410" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-22" value="Membership Form&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="725" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-23" value="Various New Section (All Leads to News and Events)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="840" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-24" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="209.5" y="870" as="sourcePoint" />
+            <mxPoint x="209.5" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-25" value="Footer (No Footer in the current one)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="940" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-27" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="270" as="sourcePoint" />
+            <mxPoint x="630" y="1070" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="630" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-28" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="270" as="sourcePoint" />
+            <mxPoint x="700" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-29" value="Home (Landing Page)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-30" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="380" as="sourcePoint" />
+            <mxPoint x="700" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-31" value="Membership Page" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="350" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-32" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="380" as="sourcePoint" />
+            <mxPoint x="970" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-33" value="Hero Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="980" y="365" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-34" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1039.5" y="400" as="sourcePoint" />
+            <mxPoint x="1039.5" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-35" value="JBCCI Statistics" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="940" y="440" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-37" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="470" as="sourcePoint" />
+            <mxPoint x="1040" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-38" value="Contact Us + Membership Form" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="925" y="520" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-40" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1039.5" y="550" as="sourcePoint" />
+            <mxPoint x="1039.5" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-41" value="JBCCI Members List" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="955" y="590" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-42" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1110" y="604.5" as="sourcePoint" />
+            <mxPoint x="1140" y="604.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-45" value="Each Member can be seen separately" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="590" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-46" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1039.5" y="630" as="sourcePoint" />
+            <mxPoint x="1039.5" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-47" value="Footer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-48" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="500" as="sourcePoint" />
+            <mxPoint x="700" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-49" value="About Us" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="470" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-50" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="500" as="sourcePoint" />
+            <mxPoint x="1000" y="770" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="500" />
+              <mxPoint x="940" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-51" value="Hero Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="750" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-53" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1044.5" y="780" as="sourcePoint" />
+            <mxPoint x="1044.5" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-54" value="Who We are + What We do + Why We do it" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="940" y="830" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-55" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GisgOL_p4xpqqTGhm8oK-54">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1140" y="840" as="sourcePoint" />
+            <mxPoint x="1045" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-56" value="Gallary Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="970" y="930" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-57" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1044.5" y="960" as="sourcePoint" />
+            <mxPoint x="1044.5" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-58" value="Directors Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="960" y="1020" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-59" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1044.5" y="1040" as="sourcePoint" />
+            <mxPoint x="1044.5" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-60" value="Objectives" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="1090" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-61" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="1104.5" as="sourcePoint" />
+            <mxPoint x="1130" y="1104.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-62" value="Membership Form" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="1090" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-64" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1044.5" y="1120" as="sourcePoint" />
+            <mxPoint x="1044.5" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-65" value="Activities Section&lt;div&gt;(Gallary)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="980" y="1170" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-66" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1044.5" y="1200" as="sourcePoint" />
+            <mxPoint x="1044.5" y="1240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-67" value="Footer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="1250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-68" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="750" as="sourcePoint" />
+            <mxPoint x="700" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-69" value="News and Events" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="725" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-70" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="GisgOL_p4xpqqTGhm8oK-69">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="880" y="760" as="sourcePoint" />
+            <mxPoint x="1000" y="1340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="920" y="750" />
+              <mxPoint x="920" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-71" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1340" as="sourcePoint" />
+            <mxPoint x="940" y="1870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-72" value="All issues if newsletter" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1320" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-73" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1440" as="sourcePoint" />
+            <mxPoint x="1000" y="1440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-74" value="Dropdown Menu" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1485" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-75" value="Each news letter can be read separately&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1195" y="1320" width="175" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-76" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1160" y="1334.5" as="sourcePoint" />
+            <mxPoint x="1190" y="1334.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-77" value="Network and Gathering Program" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1420" width="205" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-78" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1205" y="1434.5" as="sourcePoint" />
+            <mxPoint x="1235" y="1434.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-79" value="Each Event can be seen separately" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="1420" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-80" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1530" as="sourcePoint" />
+            <mxPoint x="1000" y="1530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-81" value="Business Excellence and Award" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1515" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-83" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1200" y="1530" as="sourcePoint" />
+            <mxPoint x="1240" y="1530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-84" value="Ony the award names will be seen" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1512.5" width="140" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-85" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1600" as="sourcePoint" />
+            <mxPoint x="1000" y="1600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-88" value="Conference and Seminers&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1590" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-90" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="1604.5" as="sourcePoint" />
+            <mxPoint x="1240" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-91" value="Gallary and Description" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1580" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-92" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1710" as="sourcePoint" />
+            <mxPoint x="1000" y="1710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-93" value="Factory/Project Visit" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="1690" width="145" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-94" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1150" y="1705" as="sourcePoint" />
+            <mxPoint x="1240" y="1705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-96" value="Each project visit will have separate gallary" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1680" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-97" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="1780" as="sourcePoint" />
+            <mxPoint x="1000" y="1780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-98" value="Cortesy Call and Meetings" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="1770" width="165" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-99" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1195" y="1784.5" as="sourcePoint" />
+            <mxPoint x="1245" y="1784.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-100" value="Gallary" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1770" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-101" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1290" y="1800" as="sourcePoint" />
+            <mxPoint x="1290" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-102" value="5th Board Meeting" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1860" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-103" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="900" as="sourcePoint" />
+            <mxPoint x="700" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-104" value="Contact" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="715" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-105" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="940" as="sourcePoint" />
+            <mxPoint x="770" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-106" value="Contact Us Form" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="705" y="1010" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-107" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="769" y="1090" as="sourcePoint" />
+            <mxPoint x="769" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-108" value="Membership Info + General Info + Office Secreteriate + Office Address" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1200" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-109" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="1290" as="sourcePoint" />
+            <mxPoint x="760" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GisgOL_p4xpqqTGhm8oK-110" value="JBCCI Officials Section" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1410" width="200" height="90" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
