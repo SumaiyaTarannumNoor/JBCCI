@@ -26,6 +26,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import AboutUs from './Pages/AboutUs';
 import MembershipPage from './Pages/MembershipPage';
 import NewsAndEvents from './Pages/NewsAndEvents';
+import ContactUs from './Pages/ContactUs';
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -120,12 +121,12 @@ function HomePage() {
               >
                 News & Events
               </Link>
-              <button 
-                onClick={() => scrollToSection('contact')}
+              <Link 
+                to="/contact-us"
                 className="text-gray-700 hover:text-red-600 transition-colors font-medium"
               >
-                CONTACT
-              </button>
+                Contact Us
+              </Link>
               <button 
                 onClick={() => scrollToSection('publications')}
                 className="text-gray-700 hover:text-red-600 transition-colors font-medium"
@@ -720,6 +721,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/membership" element={<MembershipPage />} />
         <Route path="/news-&-events" element={<NewsAndEvents />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         {/* You can add more routes here */}
       </Routes>
     </Router>
