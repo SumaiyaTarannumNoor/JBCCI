@@ -27,6 +27,7 @@ import AboutUs from './Pages/AboutUs';
 import MembershipPage from './Pages/MembershipPage';
 import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
+import Publications from './Pages/Publications';
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -175,18 +176,18 @@ function HomePage() {
               >
                 NEWS & EVENTS
               </button>
-              <button
-                onClick={() => { scrollToSection('contact'); }}
-                className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors"
+              <Link 
+                to="/contact-us"
+                className="text-gray-700 hover:text-red-600 transition-colors font-medium"
               >
-                CONTACT
-              </button>
-              <button
-                onClick={() => { scrollToSection('publications'); }}
-                className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors"
+                Contact Us
+              </Link>
+              <Link 
+                to="/publications"
+                className="text-gray-700 hover:text-red-600 transition-colors font-medium"
               >
-                PUBLICATIONS
-              </button>
+                Publications
+              </Link>
             </div>
           </div>
         )}
@@ -722,6 +723,7 @@ function App() {
         <Route path="/membership" element={<MembershipPage />} />
         <Route path="/news-&-events" element={<NewsAndEvents />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/publications" element={<Publications />} />
         {/* You can add more routes here */}
       </Routes>
     </Router>

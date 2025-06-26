@@ -64,6 +64,12 @@ const Navbar: React.FC = () => {
               >
                 Contact Us
               </Link>
+              <Link 
+                to="/publications"
+                className="text-gray-700 hover:text-red-600 transition-colors font-medium"
+              >
+                Publications
+              </Link>
           </nav>
 
           {/* Mobile menu button */}
