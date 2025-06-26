@@ -16,7 +16,7 @@ const ContactUs: React.FC = () => (
               Get in touch with JBCCI for membership inquiries, business opportunities, or general information.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="bg-red-100 p-3 rounded-lg">
@@ -51,10 +51,10 @@ const ContactUs: React.FC = () => (
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-2xl p-8 shadow-lg mt-10 lg:mt-0">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
               <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name

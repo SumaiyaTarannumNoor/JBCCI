@@ -114,7 +114,7 @@ function HomePage() {
                 to="/about-us"
                 className="text-gray-700 hover:text-red-600 transition-colors font-medium"
               >
-                ABOUT US
+                About Us
               </Link>
               <Link 
                 to="/news-&-events"

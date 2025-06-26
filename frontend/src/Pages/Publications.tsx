@@ -16,7 +16,7 @@ const Publications: React.FC = () => (
               Access our latest reports, newsletters, and business publications.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
               <FileText className="h-12 w-12 text-red-600 mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Annual Report 2024</h3>
