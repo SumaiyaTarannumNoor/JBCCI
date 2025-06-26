@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import AboutUs from './Pages/AboutUs';
+import MembershipPage from './Pages/MembershipPage';
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -100,12 +101,12 @@ function HomePage() {
               >
                 HOME
               </Link>
-              <button 
-                onClick={() => scrollToSection('membership')}
+              <Link 
+                to="/membership"
                 className="text-gray-700 hover:text-red-600 transition-colors font-medium"
               >
-                MEMBERSHIP
-              </button>
+                Membership
+              </Link>
               <Link 
                 to="/about-us"
                 className="text-gray-700 hover:text-red-600 transition-colors font-medium"
@@ -716,6 +717,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/membership" element={<MembershipPage />} />
         {/* You can add more routes here */}
       </Routes>
     </Router>
