@@ -30,7 +30,7 @@ import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
 import Publications from './Pages/Publications';
 import MembershipFormPage from './Pages/MembershipFomrPage';
-import BoardOfDirectors from './Pages/BoardofDirectors';
+import BoardOfDirectors from './Pages/BoardOfDirectors';
 import SecretariateOfJBCCI from './Pages/SecretariateOfJBCCI';
 import Gallery from './Pages/Gallery';
 import BoardOfDirectors2024_26 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2024_26';
@@ -50,6 +50,7 @@ import landingImage8 from './assets/landing_page/8.jpg';
 import landingImage9 from './assets/landing_page/9.jpg';
 import landingImage10 from './assets/landing_page/10.jpg';
 import landingImage11 from './assets/landing_page/11.jpg';
+import logo_banner from './assets/landing_page/Logo-2024.png'
 
 // THEME COLORS
 const PRIMARY = "#18069e";
@@ -294,7 +295,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Event Image Gallery Section */}
+      {/* Event Image Gallery Section
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
@@ -319,7 +320,7 @@ function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About/Objective Section */}
       <section className="py-20" style={{background: "#f9f8ff"}}>
@@ -344,8 +345,13 @@ function HomePage() {
               </p>
             </div>
             {/* About Image Placeholder */}
-            <div className="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-2xl font-bold">
-              About Img
+            {/* JBCCI Logo */}
+            <div className="w-full h-96 rounded-xl flex items-center justify-center bg-white shadow-lg">
+              <img
+                src={logo_banner}
+                alt="JBCCI Logo 2024"
+                className="max-w-full max-h-full object-contain p-8"
+              />
             </div>
           </div>
           <div className="text-center">
