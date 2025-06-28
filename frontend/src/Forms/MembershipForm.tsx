@@ -165,9 +165,9 @@ const MembershipForm = () => {
 
   if (submitSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div className="h-screen bg-gray-100 flex items-center justify-center p-4 mt-10 mb-10">
+        <div className="bg-white border border-gray-200 p-8 max-w-md w-full text-center">
+          <div className="w-16 h-16 bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-4">
             <Check className="w-8 h-8 text-green-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h2>
@@ -183,469 +183,484 @@ const MembershipForm = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">JBCCI Membership Application</h1>
-          <p className="text-lg text-gray-600">Join the Japan-Bangladesh Chamber of Commerce & Industry</p>
+    <div className="h-screen bg-gray-100 flex flex-col">
+      {/* Fixed Header */}
+      <div className="bg-white border-b border-gray-200 flex-shrink-0">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <h1 className="text-3xl font-bold text-gray-900">JBCCI Membership Application</h1>
+          <p className="text-gray-600 mt-1">Japan-Bangladesh Chamber of Commerce & Industry</p>
         </div>
+      </div>
 
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+      {/* Scrollable Content Container */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="max-w-4xl mx-auto p-6">
+          <div className="bg-white border border-gray-200">
+          
           {/* Company Information Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6">
+          <div className="bg-blue-600 text-white p-4 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <Building2 className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Company Information</h2>
+              <Building2 className="w-5 h-5" />
+              <h2 className="text-lg font-semibold">Company Information</h2>
             </div>
           </div>
           
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Name *
-              </label>
-              <input
-                type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.companyName ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Enter company name"
-              />
-              {errors.companyName && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.companyName}
-                </p>
-              )}
-            </div>
+          <div className="p-6 border-b border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Company Name *
+                </label>
+                <input
+                  type="text"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.companyName ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter company name"
+                />
+                {errors.companyName && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.companyName}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Type *
-              </label>
-              <select
-                name="companyType"
-                value={formData.companyType}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.companyType ? 'border-red-500' : 'border-gray-300'
-                }`}
-              >
-                <option value="">Select company type</option>
-                {companyTypes.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-              {errors.companyType && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.companyType}
-                </p>
-              )}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Company Type *
+                </label>
+                <select
+                  name="companyType"
+                  value={formData.companyType}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.companyType ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                >
+                  <option value="">Select company type</option>
+                  {companyTypes.map(type => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+                {errors.companyType && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.companyType}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Business Category *
-              </label>
-              <select
-                name="businessCategory"
-                value={formData.businessCategory}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.businessCategory ? 'border-red-500' : 'border-gray-300'
-                }`}
-              >
-                <option value="">Select business category</option>
-                {businessCategories.map(category => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
-              {errors.businessCategory && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.businessCategory}
-                </p>
-              )}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Business Category *
+                </label>
+                <select
+                  name="businessCategory"
+                  value={formData.businessCategory}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.businessCategory ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                >
+                  <option value="">Select business category</option>
+                  {businessCategories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                  ))}
+                </select>
+                {errors.businessCategory && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.businessCategory}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Year Established
-              </label>
-              <input
-                type="number"
-                name="yearEstablished"
-                value={formData.yearEstablished}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                placeholder="e.g., 2010"
-                min="1900"
-                max={new Date().getFullYear()}
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Year Established
+                </label>
+                <input
+                  type="number"
+                  name="yearEstablished"
+                  value={formData.yearEstablished}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="e.g., 2010"
+                  min="1900"
+                  max={new Date().getFullYear()}
+                />
+              </div>
 
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Address *
-              </label>
-              <textarea
-                name="companyAddress"
-                value={formData.companyAddress}
-                onChange={handleInputChange}
-                rows={3}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.companyAddress ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Enter complete company address"
-              />
-              {errors.companyAddress && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.companyAddress}
-                </p>
-              )}
-            </div>
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Company Address *
+                </label>
+                <textarea
+                  name="companyAddress"
+                  value={formData.companyAddress}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.companyAddress ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter complete company address"
+                />
+                {errors.companyAddress && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.companyAddress}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Website
-              </label>
-              <input
-                type="url"
-                name="website"
-                value={formData.website}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                placeholder="https://www.example.com"
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Website
+                </label>
+                <input
+                  type="url"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="https://www.example.com"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Phone *
-              </label>
-              <input
-                type="tel"
-                name="companyPhone"
-                value={formData.companyPhone}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.companyPhone ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="+880-XXX-XXXXXXX"
-              />
-              {errors.companyPhone && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.companyPhone}
-                </p>
-              )}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Company Phone *
+                </label>
+                <input
+                  type="tel"
+                  name="companyPhone"
+                  value={formData.companyPhone}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.companyPhone ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="+880-XXX-XXXXXXX"
+                />
+                {errors.companyPhone && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.companyPhone}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Company Email *
-              </label>
-              <input
-                type="email"
-                name="companyEmail"
-                value={formData.companyEmail}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${
-                  errors.companyEmail ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="company@example.com"
-              />
-              {errors.companyEmail && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.companyEmail}
-                </p>
-              )}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Company Email *
+                </label>
+                <input
+                  type="email"
+                  name="companyEmail"
+                  value={formData.companyEmail}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-blue-500 focus:border-blue-500 ${
+                    errors.companyEmail ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="company@example.com"
+                />
+                {errors.companyEmail && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.companyEmail}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Contact Person Information */}
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-6">
+          <div className="bg-green-600 text-white p-4 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <User className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Contact Person Information</h2>
+              <User className="w-5 h-5" />
+              <h2 className="text-lg font-semibold">Contact Person Information</h2>
             </div>
           </div>
 
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Contact Person Name *
-              </label>
-              <input
-                type="text"
-                name="contactPersonName"
-                value={formData.contactPersonName}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors ${
-                  errors.contactPersonName ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Enter contact person name"
-              />
-              {errors.contactPersonName && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.contactPersonName}
-                </p>
-              )}
-            </div>
+          <div className="p-6 border-b border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contact Person Name *
+                </label>
+                <input
+                  type="text"
+                  name="contactPersonName"
+                  value={formData.contactPersonName}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-green-500 focus:border-green-500 ${
+                    errors.contactPersonName ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter contact person name"
+                />
+                {errors.contactPersonName && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.contactPersonName}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Designation *
-              </label>
-              <input
-                type="text"
-                name="designation"
-                value={formData.designation}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors ${
-                  errors.designation ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="e.g., Managing Director, CEO"
-              />
-              {errors.designation && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.designation}
-                </p>
-              )}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Designation *
+                </label>
+                <input
+                  type="text"
+                  name="designation"
+                  value={formData.designation}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-green-500 focus:border-green-500 ${
+                    errors.designation ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="e.g., Managing Director, CEO"
+                />
+                {errors.designation && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.designation}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Contact Email *
-              </label>
-              <input
-                type="email"
-                name="contactEmail"
-                value={formData.contactEmail}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors ${
-                  errors.contactEmail ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="contact@example.com"
-              />
-              {errors.contactEmail && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.contactEmail}
-                </p>
-              )}
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contact Email *
+                </label>
+                <input
+                  type="email"
+                  name="contactEmail"
+                  value={formData.contactEmail}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-green-500 focus:border-green-500 ${
+                    errors.contactEmail ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="contact@example.com"
+                />
+                {errors.contactEmail && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.contactEmail}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Contact Phone *
-              </label>
-              <input
-                type="tel"
-                name="contactPhone"
-                value={formData.contactPhone}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors ${
-                  errors.contactPhone ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="+880-XXX-XXXXXXX"
-              />
-              {errors.contactPhone && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.contactPhone}
-                </p>
-              )}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Contact Phone *
+                </label>
+                <input
+                  type="tel"
+                  name="contactPhone"
+                  value={formData.contactPhone}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-green-500 focus:border-green-500 ${
+                    errors.contactPhone ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="+880-XXX-XXXXXXX"
+                />
+                {errors.contactPhone && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.contactPhone}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Business Details */}
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
+          <div className="bg-purple-600 text-white p-4 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <FileText className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Business Details</h2>
+              <FileText className="w-5 h-5" />
+              <h2 className="text-lg font-semibold">Business Details</h2>
             </div>
           </div>
 
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Number of Employees
-              </label>
-              <input
-                type="number"
-                name="numberOfEmployees"
-                value={formData.numberOfEmployees}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                placeholder="e.g., 50"
-                min="1"
-              />
-            </div>
+          <div className="p-6 border-b border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Number of Employees
+                </label>
+                <input
+                  type="number"
+                  name="numberOfEmployees"
+                  value={formData.numberOfEmployees}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                  placeholder="e.g., 50"
+                  min="1"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Annual Turnover (BDT)
-              </label>
-              <input
-                type="text"
-                name="annualTurnover"
-                value={formData.annualTurnover}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
-                placeholder="e.g., 10,00,000"
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Annual Turnover (BDT)
+                </label>
+                <input
+                  type="text"
+                  name="annualTurnover"
+                  value={formData.annualTurnover}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500"
+                  placeholder="e.g., 10,00,000"
+                />
+              </div>
 
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Business Description *
-              </label>
-              <textarea
-                name="businessDescription"
-                value={formData.businessDescription}
-                onChange={handleInputChange}
-                rows={4}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors ${
-                  errors.businessDescription ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="Describe your business activities, products, and services"
-              />
-              {errors.businessDescription && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.businessDescription}
-                </p>
-              )}
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Business Description *
+                </label>
+                <textarea
+                  name="businessDescription"
+                  value={formData.businessDescription}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-purple-500 focus:border-purple-500 ${
+                    errors.businessDescription ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                  placeholder="Describe your business activities, products, and services"
+                />
+                {errors.businessDescription && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.businessDescription}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Membership Information */}
-          <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-6">
+          <div className="bg-orange-600 text-white p-4 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <Calendar className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Membership Information</h2>
+              <Calendar className="w-5 h-5" />
+              <h2 className="text-lg font-semibold">Membership Information</h2>
             </div>
           </div>
 
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Membership Type *
-              </label>
-              <select
-                name="membershipType"
-                value={formData.membershipType}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors ${
-                  errors.membershipType ? 'border-red-500' : 'border-gray-300'
-                }`}
-              >
-                <option value="">Select membership type</option>
-                {membershipTypes.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-              {errors.membershipType && (
-                <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.membershipType}
-                </p>
-              )}
-            </div>
+          <div className="p-6 border-b border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Membership Type *
+                </label>
+                <select
+                  name="membershipType"
+                  value={formData.membershipType}
+                  onChange={handleInputChange}
+                  className={`w-full px-3 py-2 border focus:ring-1 focus:ring-orange-500 focus:border-orange-500 ${
+                    errors.membershipType ? 'border-red-500' : 'border-gray-300'
+                  }`}
+                >
+                  <option value="">Select membership type</option>
+                  {membershipTypes.map(type => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+                {errors.membershipType && (
+                  <p className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.membershipType}
+                  </p>
+                )}
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Referred By
-              </label>
-              <input
-                type="text"
-                name="referredBy"
-                value={formData.referredBy}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                placeholder="Name of referring member (if any)"
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Referred By
+                </label>
+                <input
+                  type="text"
+                  name="referredBy"
+                  value={formData.referredBy}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
+                  placeholder="Name of referring member (if any)"
+                />
+              </div>
 
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Objectives for Joining JBCCI
-              </label>
-              <textarea
-                name="objectives"
-                value={formData.objectives}
-                onChange={handleInputChange}
-                rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                placeholder="What do you hope to achieve through JBCCI membership?"
-              />
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Objectives for Joining JBCCI
+                </label>
+                <textarea
+                  name="objectives"
+                  value={formData.objectives}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-orange-500 focus:border-orange-500"
+                  placeholder="What do you hope to achieve through JBCCI membership?"
+                />
+              </div>
             </div>
           </div>
 
           {/* Document Upload */}
-          <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white p-6">
+          <div className="bg-teal-600 text-white p-4 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <FileText className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Supporting Documents</h2>
+              <FileText className="w-5 h-5" />
+              <h2 className="text-lg font-semibold">Supporting Documents</h2>
             </div>
           </div>
 
-          <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Trade License
-              </label>
-              <input
-                type="file"
-                name="tradeLicense"
-                onChange={handleFileChange}
-                accept=".pdf,.jpg,.jpeg,.png"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-              />
-              <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
-            </div>
+          <div className="p-6 border-b border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Trade License
+                </label>
+                <input
+                  type="file"
+                  name="tradeLicense"
+                  onChange={handleFileChange}
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-teal-500 focus:border-teal-500"
+                />
+                <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Incorporation Certificate
-              </label>
-              <input
-                type="file"
-                name="incorporationCertificate"
-                onChange={handleFileChange}
-                accept=".pdf,.jpg,.jpeg,.png"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-              />
-              <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Incorporation Certificate
+                </label>
+                <input
+                  type="file"
+                  name="incorporationCertificate"
+                  onChange={handleFileChange}
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-teal-500 focus:border-teal-500"
+                />
+                <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                VAT Certificate
-              </label>
-              <input
-                type="file"
-                name="vatCertificate"
-                onChange={handleFileChange}
-                accept=".pdf,.jpg,.jpeg,.png"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
-              />
-              <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  VAT Certificate
+                </label>
+                <input
+                  type="file"
+                  name="vatCertificate"
+                  onChange={handleFileChange}
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  className="w-full px-3 py-2 border border-gray-300 focus:ring-1 focus:ring-teal-500 focus:border-teal-500"
+                />
+                <p className="mt-1 text-xs text-gray-500">PDF, JPG, PNG (Max 5MB)</p>
+              </div>
             </div>
           </div>
 
           {/* Submit Button */}
-          <div className="p-6 bg-gray-50">
+          <div className="p-6 bg-gray-50 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
               <p className="text-sm text-gray-600">
                 * Required fields. All information will be kept confidential.
@@ -654,7 +669,7 @@ const MembershipForm = () => {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-300 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-6 py-2 bg-blue-600 text-white font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 border border-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center gap-2">
@@ -666,6 +681,7 @@ const MembershipForm = () => {
                 )}
               </button>
             </div>
+          </div>
           </div>
         </div>
       </div>
