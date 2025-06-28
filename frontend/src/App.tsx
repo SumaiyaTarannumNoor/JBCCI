@@ -489,6 +489,102 @@ function HomePage() {
         </div>
       </section>
 
+      {/* People Section */}
+      <section id="people" className="py-20" style={{background: "#fff8e3"}}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
+              Our People
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Meet the dedicated individuals who make JBCCI a thriving community of business professionals.
+            </p>
+          </div>
+          
+          {/* Responsive Grid: 2 columns on mobile/small screens, more on larger screens */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
+            {boardMembers.map((member, index) => (
+              <div key={index} className="bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 group text-center">
+                <div className="relative mb-3">
+                  {member.image ? (
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto overflow-hidden border-3 sm:border-4 border-white shadow-lg">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div 
+                        className={`w-full h-full rounded-full flex items-center justify-center text-white text-sm sm:text-lg font-bold hidden ${
+                          member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                        }`}
+                        style={{
+                          background: member.position.includes('PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                            : member.position.includes('VICE PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                            : member.position.includes('SECRETARY')
+                            ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                            : member.position.includes('TREASURER')
+                            ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                            : member.position.includes('ADVISOR')
+                            ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                            : member.position.includes('EXECUTIVE')
+                            ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                            : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                        }}
+                      >
+                        {member.initials}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto flex items-center justify-center text-white text-sm sm:text-lg font-bold ${
+                      member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                    }`}
+                      style={{
+                        background: member.position.includes('PRESIDENT')
+                          ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                          : member.position.includes('VICE PRESIDENT')
+                          ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                          : member.position.includes('SECRETARY')
+                          ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                          : member.position.includes('TREASURER')
+                          ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                          : member.position.includes('ADVISOR')
+                          ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                          : member.position.includes('EXECUTIVE')
+                          ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                          : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                      }}>
+                      {member.initials}
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1 leading-tight line-clamp-2">{member.name}</h3>
+                <p className={`text-xs font-medium`} style={{
+                  color:
+                    member.position.includes('PRESIDENT') ? SECONDARY :
+                    member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
+                    member.position.includes('SECRETARY') ? PRIMARY :
+                    member.position.includes('TREASURER') ? "#18c06e" :
+                    member.position.includes('ADVISOR') ? "#9005e6" :
+                    member.position.includes('EXECUTIVE') ? "#0fdad8" :
+                    "#222"
+                }}>
+                  {member.position}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Board Members Section */}
       <section id="board" className="py-20" style={{background:"#f9f8ff"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
