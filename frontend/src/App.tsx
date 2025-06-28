@@ -52,6 +52,26 @@ import landingImage10 from './assets/landing_page/10.jpg';
 import landingImage11 from './assets/landing_page/11.jpg';
 import logo_banner from './assets/landing_page/Logo-2024.png'
 
+// Import people images
+import tareqRafiBhuiyan from './assets/landing_page/people/Tareq Rafi Bhuiyan (Jun).jpg';
+import anwarShahid from './assets/landing_page/people/Md. Anwar Shahid.jpg';
+import hiroakiOura from './assets/landing_page/people/Hiroaki Oura.jpg';
+import mariaHowlader from './assets/landing_page/people/Maria Howlader FCA.jpg';
+import yujiAndo from './assets/landing_page/people/Yuji Ando.jpg';
+import kenjiKimura from './assets/landing_page/people/Kenji Kimura.jpg';
+import jahangirAlamSharker from './assets/landing_page/people/Md. Jahangir Alam Sharker.jpg';
+import manabuSugawara from './assets/landing_page/people/Manabu Sugawara.jpg';
+import nayeemurRahman from './assets/landing_page/people/Nayeemur Rahman.jpg';
+import sharifulAlam from './assets/landing_page/people/Md. Shariful Alam.jpg';
+import mohammedSohel from './assets/landing_page/people/Mohammed Sohel.jpg';
+import tariqulIslam from './assets/landing_page/people/Abu Zaman Md. Tariqul Islam.jpg';
+import islamBabu from './assets/landing_page/people/AKM Ahmedul Islam Babu.jpg';
+import hiroshiUegaki from './assets/landing_page/people/Hiroshi Uegaki.jpg';
+import rabiulAlam from './assets/landing_page/people/Rabiul Alam.jpg';
+import atsushiHirakuri from './assets/landing_page/people/Atsushi Hirakuri.jpg';
+import asifChowdhury from './assets/landing_page/people/Asif A. Chowdhury.jpg';
+import taheraAhsan from './assets/landing_page/people/Tahera Ahsan.jpg';
+
 // THEME COLORS
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -130,24 +150,114 @@ function HomePage() {
   };
 
   const boardMembers = [
-    { name: "MR. TAREQ RAFI BHUIYAN (JUN)", position: "PRESIDENT", initials: "TB" },
-    { name: "MR. MD. ANWAR SHAHID", position: "VICE PRESIDENT", initials: "AS" },
-    { name: "MR. HIROAKI OURA", position: "VICE PRESIDENT", initials: "HO" },
-    { name: "MS. MARIA HOWLADER FCA", position: "SECRETARY GENERAL", initials: "MH" },
-    { name: "MR. YUJI ANDO", position: "JOINT SECRETARY GENERAL", initials: "YA" },
-    { name: "MR. KENJI KIMURA", position: "TREASURER", initials: "KK" },
-    { name: "MR. MD. JAHANGIR ALAM SHARKER", position: "JOINT TREASURER", initials: "JS" },
-    { name: "MR. MANABU SUGAWARA", position: "DIRECTOR", initials: "MS" },
-    { name: "MR. NAYEEMUR RAHMAN", position: "DIRECTOR", initials: "NR" },
-    { name: "MR. MD. SHARIFUL ALAM", position: "DIRECTOR", initials: "SA" },
-    { name: "MR. MOHAMMED SOHEL", position: "DIRECTOR", initials: "MS" },
-    { name: "MR. ABU ZAMAN MD. TARIQUL ISLAM", position: "DIRECTOR", initials: "TI" },
-    { name: "MR. AKM AHMEDUL ISLAM BABU", position: "DIRECTOR", initials: "IB" },
-    { name: "MR. HIROSHI UEGAKI", position: "DIRECTOR", initials: "HU" },
-    { name: "MR. RABIUL ALAM", position: "DIRECTOR", initials: "RA" },
-    { name: "MR. ATSUSHI HIRAKURI", position: "DIRECTOR", initials: "AH" },
-    { name: "MR. ASIF A. CHOWDHURY", position: "ADVISOR TO THE BOARD", initials: "AC" },
-    { name: "MS. TAHERA AHSAN", position: "EXECUTIVE DIRECTOR", initials: "TA" }
+    { 
+      name: "MR. TAREQ RAFI BHUIYAN (JUN)", 
+      position: "PRESIDENT", 
+      initials: "TB",
+      image: tareqRafiBhuiyan
+    },
+    { 
+      name: "MR. MD. ANWAR SHAHID", 
+      position: "VICE PRESIDENT", 
+      initials: "AS",
+      image: anwarShahid
+    },
+    { 
+      name: "MR. HIROAKI OURA", 
+      position: "VICE PRESIDENT", 
+      initials: "HO",
+      image: hiroakiOura
+    },
+    { 
+      name: "MS. MARIA HOWLADER FCA", 
+      position: "SECRETARY GENERAL", 
+      initials: "MH",
+      image: mariaHowlader
+    },
+    { 
+      name: "MR. YUJI ANDO", 
+      position: "JOINT SECRETARY GENERAL", 
+      initials: "YA",
+      image: yujiAndo
+    },
+    { 
+      name: "MR. KENJI KIMURA", 
+      position: "TREASURER", 
+      initials: "KK",
+      image: kenjiKimura
+    },
+    { 
+      name: "MR. MD. JAHANGIR ALAM SHARKER", 
+      position: "JOINT TREASURER", 
+      initials: "JS",
+      image: jahangirAlamSharker
+    },
+    { 
+      name: "MR. MANABU SUGAWARA", 
+      position: "DIRECTOR", 
+      initials: "MS",
+      image: manabuSugawara
+    },
+    { 
+      name: "MR. NAYEEMUR RAHMAN", 
+      position: "DIRECTOR", 
+      initials: "NR",
+      image: nayeemurRahman
+    },
+    { 
+      name: "MR. MD. SHARIFUL ALAM", 
+      position: "DIRECTOR", 
+      initials: "SA",
+      image: sharifulAlam
+    },
+    { 
+      name: "MR. MOHAMMED SOHEL", 
+      position: "DIRECTOR", 
+      initials: "MS",
+      image: mohammedSohel
+    },
+    { 
+      name: "MR. ABU ZAMAN MD. TARIQUL ISLAM", 
+      position: "DIRECTOR", 
+      initials: "TI",
+      image: tariqulIslam
+    },
+    { 
+      name: "MR. AKM AHMEDUL ISLAM BABU", 
+      position: "DIRECTOR", 
+      initials: "IB",
+      image: islamBabu
+    },
+    { 
+      name: "MR. HIROSHI UEGAKI", 
+      position: "DIRECTOR", 
+      initials: "HU",
+      image: hiroshiUegaki
+    },
+    { 
+      name: "MR. RABIUL ALAM", 
+      position: "DIRECTOR", 
+      initials: "RA",
+      image: rabiulAlam
+    },
+    { 
+      name: "MR. ATSUSHI HIRAKURI", 
+      position: "DIRECTOR", 
+      initials: "AH",
+      image: atsushiHirakuri
+    },
+    { 
+      name: "MR. ASIF A. CHOWDHURY", 
+      position: "ADVISOR TO THE BOARD", 
+      initials: "AC",
+      image: asifChowdhury
+    },
+    { 
+      name: "MS. TAHERA AHSAN", 
+      position: "EXECUTIVE DIRECTOR", 
+      initials: "TA",
+      image: taheraAhsan
+    }
   ];
 
   return (
@@ -295,33 +405,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Event Image Gallery Section
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-            {[
-              "Networking Program",
-              "Women's Day",
-              "17th AGM",
-              "AGM",
-              "Seminar",
-              "Seminar 2",
-              "HSIA Visit",
-              "Seminar 3",
-              "Event 9",
-              "Event 10",
-              "Event 11",
-              "Event 12",
-              "Event 13",
-            ].map((desc, i) => (
-              <div key={i} className="aspect-square bg-gray-200 flex items-center justify-center rounded-xl text-gray-400 text-xs font-semibold">
-                {desc} <br /> Placeholder
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* About/Objective Section */}
       <section className="py-20" style={{background: "#f9f8ff"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -344,7 +427,6 @@ function HomePage() {
                 To Collect and provide business information in Bangladesh and Japan.To promote the two – way trade and investment between Japan and Bangladesh.To explore new areas of investment and encourage the establishment of Japan-Bangladesh joint –.
               </p>
             </div>
-            {/* About Image Placeholder */}
             {/* JBCCI Logo */}
             <div className="w-full h-96 rounded-xl flex items-center justify-center bg-white shadow-lg">
               <img
@@ -422,26 +504,65 @@ function HomePage() {
             {boardMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
                 <div className="relative mb-4">
-                  <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
-                    member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
-                  }`}
-                    style={{
-                      background: member.position.includes('PRESIDENT')
-                        ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
-                        : member.position.includes('VICE PRESIDENT')
-                        ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
-                        : member.position.includes('SECRETARY')
-                        ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
-                        : member.position.includes('TREASURER')
-                        ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
-                        : member.position.includes('ADVISOR')
-                        ? `linear-gradient(135deg, #b15ef9, #8246e6)`
-                        : member.position.includes('EXECUTIVE')
-                        ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
-                        : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
-                    }}>
-                    {member.initials}
-                  </div>
+                  {member.image ? (
+                    <div className="w-20 h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div 
+                        className={`w-full h-full rounded-full flex items-center justify-center text-white text-lg font-bold hidden ${
+                          member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                        }`}
+                        style={{
+                          background: member.position.includes('PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                            : member.position.includes('VICE PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                            : member.position.includes('SECRETARY')
+                            ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                            : member.position.includes('TREASURER')
+                            ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                            : member.position.includes('ADVISOR')
+                            ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                            : member.position.includes('EXECUTIVE')
+                            ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                            : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                        }}
+                      >
+                        {member.initials}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
+                      member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                    }`}
+                      style={{
+                        background: member.position.includes('PRESIDENT')
+                          ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                          : member.position.includes('VICE PRESIDENT')
+                          ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                          : member.position.includes('SECRETARY')
+                          ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                          : member.position.includes('TREASURER')
+                          ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                          : member.position.includes('ADVISOR')
+                          ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                          : member.position.includes('EXECUTIVE')
+                          ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                          : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                      }}>
+                      {member.initials}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
                 <p className={`text-xs font-medium mb-2`} style={{
