@@ -92,24 +92,23 @@ const directors = [
 const BoardOfDirectors2018_20: React.FC = () => (
   <>
     <Navbar />
-    <main className="pt-20 min-h-screen bg-gray-50">
+    <main className="pt-20 min-h-screen bg-gradient-to-b from-[#edeafd] to-[#fff8e3]">
       <div className="max-w-4xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-red-700 mb-6 text-center">Board of Directors (2018–2020)</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8">Board of Directors (2018–2020)</h1>
+        <div className="grid md:grid-cols-2 gap-8">
           {directors.map((director, idx) => (
             <div
               key={idx}
-              className="flex items-center space-x-4 bg-white rounded-xl shadow p-4"
+              className="flex items-center space-x-4 bg-white rounded-xl shadow p-4 hover:shadow-lg transition-shadow"
             >
-              <div className="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold text-gray-400">
-                {/* Placeholder image */}
-                <span>IMG</span>
+              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xl font-bold">
+                {director.name.split(' ').filter(w => w[0] === w[0]?.toUpperCase()).map(w => w[0]).join('').substring(0, 2)}
               </div>
               <div>
                 <div className="font-semibold text-gray-900">{director.name}</div>
-                <div className="text-sm text-gray-600">{director.position}</div>
+                <div className="text-sm font-medium text-primary mb-1">{director.position}</div>
                 {director.companyRole && (
-                  <div className="text-xs text-gray-500">{director.companyRole}</div>
+                  <div className="text-xs text-gray-600">{director.companyRole}</div>
                 )}
                 {director.company && (
                   <div className="text-xs text-gray-500">{director.company}</div>
