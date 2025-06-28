@@ -536,12 +536,13 @@ function HomePage() {
                 Meet our distinguished board members who guide JBCCI's vision and strategic direction.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Updated responsive grid: 2 columns on small screens, more on larger screens */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
               {boardMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
+                <div key={index} className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
                   <div className="relative mb-4">
                     {member.image ? (
-                      <div className="w-20 h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
                         <img
                           src={member.image}
                           alt={member.name}
@@ -555,7 +556,7 @@ function HomePage() {
                           }}
                         />
                         <div 
-                          className={`w-full h-full rounded-full flex items-center justify-center text-white text-lg font-bold hidden ${
+                          className={`w-full h-full rounded-full flex items-center justify-center text-white text-sm sm:text-lg font-bold hidden ${
                             member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
                           }`}
                           style={{
@@ -578,7 +579,7 @@ function HomePage() {
                         </div>
                       </div>
                     ) : (
-                      <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
+                      <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto flex items-center justify-center text-white text-sm sm:text-lg font-bold ${
                         member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
                       }`}
                         style={{
@@ -600,7 +601,7 @@ function HomePage() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
                   <p className={`text-xs font-medium mb-2`} style={{
                     color:
                       member.position.includes('PRESIDENT') ? SECONDARY :
