@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Mail, Phone } from 'lucide-react';
-import logo from '../assets/logo/logo.jpg'
+import logo from '../assets/logo/logo.png'
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";

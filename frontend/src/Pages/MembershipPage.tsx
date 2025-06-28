@@ -1,49 +1,278 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+
+// Import landing page images for carousel
+import landingImage1 from '../assets/landing_page/1.jpg';
+import landingImage2 from '../assets/landing_page/2.jpg';
+import landingImage3 from '../assets/landing_page/3.jpg';
+import landingImage4 from '../assets/landing_page/4.jpg';
+import landingImage5 from '../assets/landing_page/5.jpg';
+import landingImage6 from '../assets/landing_page/6.jpg';
+import landingImage7 from '../assets/landing_page/7.jpg';
+import landingImage8 from '../assets/landing_page/8.jpg';
+import landingImage9 from '../assets/landing_page/9.jpg';
+import landingImage10 from '../assets/landing_page/10.jpg';
+import landingImage11 from '../assets/landing_page/11.jpg';
+
+// Import people images
+import tareqRafiBhuiyan from '../assets/people/Tareq_Rafi.jpg';
+import anwarShahid from '../assets/people/Anwar_Shahid.jpg';
+import hiroakiOura from '../assets/people/Hiroki_Oura.jpg';
+import mariaHowlader from '../assets/people/Mariya_Howladar.jpg';
+import yujiAndo from '../assets/people/Yuji_Ando.jpg';
+import kenjiKimura from '../assets/people/Kenji_Kimura.jpg';
+import jahangirAlamSharker from '../assets/people/Jahangir_Alam.jpg';
+import manabuSugawara from '../assets/people/Manabu_Sugawara.jpg';
+import nayeemurRahman from '../assets/people/Nayeemur_Rahman.jpg';
+import sharifulAlam from '../assets/people/Shariful_Alam.jpg';
+import mohammedSohel from '../assets/people/Mohammed_Sohel.jpg';
+import tariqulIslam from '../assets/people/Zaman_Tariqul_Islam.jpg';
+import islamBabu from '../assets/people/Ahmedul_Islam.jpg';
+import hiroshiUegaki from '../assets/people/Hiroshi_Uegaki.jpg';
+import rabiulAlam from '../assets/people/Rabiul_Alam.jpg';
+import atsushiHirakuri from '../assets/people/Atasuchi_Hirakuri.jpg';
+import asifChowdhury from '../assets/people/Asif_Chowdhury.jpg';
+import taheraAhsan from '../assets/people/Tahera_Ahsan.jpg';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
 
+// Carousel images array
+const carouselImages = [
+  landingImage1,
+  landingImage2,
+  landingImage3,
+  landingImage4,
+  landingImage5,
+  landingImage6,
+  landingImage7,
+  landingImage8,
+  landingImage9,
+  landingImage10,
+  landingImage11
+];
+
 const directors = [
-  { name: "Mr. Tareq Rafi Bhuiyan (Jun)", position: "President" },
-  { name: "Mr. Md. Anwar Shahid", position: "Vice President" },
-  { name: "Mr. Hiroaki Oura", position: "Vice President" },
-  { name: "Ms. Maria Howlader FCA", position: "Secretary General" },
-  { name: "Mr. Yuji Ando", position: "Joint Secretary General" },
-  { name: "Mr. Kenji Kimura", position: "Treasurer" },
-  { name: "Mr. Md. Jahangir Alam Sharker", position: "Joint Treasurer" },
-  { name: "Mr. Manabu Sugawara", position: "Director" },
-  { name: "Mr. Mohammed Sohel", position: "Director" },
-  { name: "Mr. Md. Shariful Alam", position: "Director" },
-  { name: "Mr. Nayeemur Rahman", position: "Director" },
-  { name: "Mr. Abu Zaman Md. Tariqul Islam", position: "Director" },
-  { name: "Mr. AKM Ahmedul Islam BABU", position: "Director" },
-  { name: "Mr. Hiroshi Uegaki", position: "Director" },
-  { name: "Mr. Rabiul Alam", position: "Director" },
-  { name: "Mr. Atsushi Hirakuri", position: "Director" },
-  { name: "Mr. Asif A. Chowdhury", position: "Advisor to the Board" },
-  { name: "Ms. Tahera Ahsan", position: "Executive Director" }
+  { 
+    name: "Mr. Tareq Rafi Bhuiyan (Jun)", 
+    position: "President",
+    image: tareqRafiBhuiyan
+  },
+  { 
+    name: "Mr. Md. Anwar Shahid", 
+    position: "Vice President",
+    image: anwarShahid
+  },
+  { 
+    name: "Mr. Hiroaki Oura", 
+    position: "Vice President",
+    image: hiroakiOura
+  },
+  { 
+    name: "Ms. Maria Howlader FCA", 
+    position: "Secretary General",
+    image: mariaHowlader
+  },
+  { 
+    name: "Mr. Yuji Ando", 
+    position: "Joint Secretary General",
+    image: yujiAndo
+  },
+  { 
+    name: "Mr. Kenji Kimura", 
+    position: "Treasurer",
+    image: kenjiKimura
+  },
+  { 
+    name: "Mr. Md. Jahangir Alam Sharker", 
+    position: "Joint Treasurer",
+    image: jahangirAlamSharker
+  },
+  { 
+    name: "Mr. Manabu Sugawara", 
+    position: "Director",
+    image: manabuSugawara
+  },
+  { 
+    name: "Mr. Mohammed Sohel", 
+    position: "Director",
+    image: mohammedSohel
+  },
+  { 
+    name: "Mr. Md. Shariful Alam", 
+    position: "Director",
+    image: sharifulAlam
+  },
+  { 
+    name: "Mr. Nayeemur Rahman", 
+    position: "Director",
+    image: nayeemurRahman
+  },
+  { 
+    name: "Mr. Abu Zaman Md. Tariqul Islam", 
+    position: "Director",
+    image: tariqulIslam
+  },
+  { 
+    name: "Mr. AKM Ahmedul Islam BABU", 
+    position: "Director",
+    image: islamBabu
+  },
+  { 
+    name: "Mr. Hiroshi Uegaki", 
+    position: "Director",
+    image: hiroshiUegaki
+  },
+  { 
+    name: "Mr. Rabiul Alam", 
+    position: "Director",
+    image: rabiulAlam
+  },
+  { 
+    name: "Mr. Atsushi Hirakuri", 
+    position: "Director",
+    image: atsushiHirakuri
+  },
+  { 
+    name: "Mr. Asif A. Chowdhury", 
+    position: "Advisor to the Board",
+    image: asifChowdhury
+  },
+  { 
+    name: "Ms. Tahera Ahsan", 
+    position: "Executive Director",
+    image: taheraAhsan
+  }
 ];
 
 const MembershipPage: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  const getPositionColor = (position: string) => {
+    if (position.includes('President')) return SECONDARY;
+    if (position.includes('Secretary')) return PRIMARY;
+    if (position.includes('Treasurer')) return '#18c06e';
+    if (position.includes('Advisor')) return '#9005e6';
+    if (position.includes('Executive')) return '#0fdad8';
+    return '#666';
+  };
+
   return (
     <>
       <Navbar />
       <div className="pt-16 min-h-screen" style={{ background: "#fff" }}>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-          {/* Hero Section */}
-          <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-5xl font-bold mb-3" style={{ color: PRIMARY }}>
-              Japan Bangladesh Chamber of Commerce and Industry (JBCCI)
-            </h1>
-            <p className="text-lg md:text-xl" style={{ color: SECONDARY }}>
-              An Association to develop business between Bangladesh and Japan
-            </p>
+        {/* Hero Section with Background Carousel */}
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          {/* Background Carousel */}
+          <div className="absolute inset-0 z-0">
+            <div className="relative w-full h-full">
+              {carouselImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <img
+                    src={image}
+                    alt={`JBCCI Background ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50"></div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Navigation arrows */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-200 z-10"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-200 z-10"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+            
+            {/* Dots indicator */}
+            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+              {carouselImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToImage(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === currentImageIndex 
+                      ? 'bg-white scale-110' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
+          {/* Hero Content */}
+          <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+              Japan Bangladesh Chamber of Commerce and Industry
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 drop-shadow-md" style={{ color: SECONDARY }}>
+              An Association to develop business between Bangladesh and Japan
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/membership-form"
+                className="inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+                style={{ background: SECONDARY, color: "#000" }}
+              >
+                Become Our Member Today
+              </Link>
+              <Link
+                to="/about-us"
+                className="inline-flex items-center px-8 py-4 border-2 border-white rounded-lg font-semibold text-lg text-white hover:bg-white hover:text-gray-900 transition-all duration-200"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Who we are, What we do, Why we do it */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="rounded-xl p-6 shadow" style={{ background: PRIMARY + "11" }}>
@@ -66,7 +295,7 @@ const MembershipPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Become a Member Today - Welcome Section (connects to membership-form page) */}
+          {/* Become a Member Today - Welcome Section */}
           <div className="mb-12">
             <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-10 text-center">
               <h1 className="text-4xl font-bold mb-4" style={{ color: SECONDARY }}>Become Our Member Today!</h1>
@@ -83,13 +312,17 @@ const MembershipPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Office Placeholder Images */}
+          {/* Office Placeholder Images with Carousel Images */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-4" style={{ color: PRIMARY }}>Check out our cool office</h2>
+            <h2 className="text-2xl font-bold text-center mb-4" style={{ color: PRIMARY }}>Check out our activities</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {[1, 2, 3, 4, 5].map(i => (
-                <div key={i} className="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-4xl font-bold">
-                  Image {i}
+              {carouselImages.slice(0, 5).map((image, i) => (
+                <div key={i} className="w-full aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                  <img
+                    src={image}
+                    alt={`JBCCI Activity ${i + 1}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               ))}
             </div>
@@ -100,13 +333,34 @@ const MembershipPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-center mb-6" style={{ color: SECONDARY }}>Our Directors</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {directors.map((director, idx) => (
-                <div key={idx} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-200 mb-3 flex items-center justify-center text-3xl text-gray-400 font-bold">
-                    <span>Img</span>
+                <div key={idx} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 rounded-full mb-4 overflow-hidden border-4 border-white shadow-lg">
+                    {director.image ? (
+                      <img
+                        src={director.image}
+                        alt={director.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to placeholder if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center text-3xl text-gray-400 font-bold">
+                      <span>Img</span>
+                    </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold text-gray-900">{director.name}</h3>
-                    <p className="text-sm text-gray-600">{director.position}</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{director.name}</h3>
+                    <p 
+                      className="text-sm font-medium"
+                      style={{ color: getPositionColor(director.position) }}
+                    >
+                      {director.position}
+                    </p>
                   </div>
                 </div>
               ))}

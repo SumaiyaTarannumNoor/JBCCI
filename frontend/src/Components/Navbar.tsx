@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logo from '../assets/logo/logo.jpg'
+import logo from '../assets/logo/logo.png';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
 
-const Navbar: React.FC = () => {
+// Add showLoginButton prop for control (default true)
+const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isBoardDropdownOpen, setIsBoardDropdownOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const location = useLocation();
+  const navigate = useNavigate();
   const aboutDropdownRef = useRef<HTMLDivElement>(null);
   const boardDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -64,27 +66,25 @@ const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrollY > 50
-          ? ""
-          : "bg-opacity-95 backdrop-blur-sm"
+        scrollY > 50 ? "" : "bg-opacity-95 backdrop-blur-sm"
       }`}
       style={{ background: PRIMARY }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-3">
+      <div className="max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex items-center space-x-4">
             <img
               src={logo}
               alt="JBCCI Logo"
-              className="h-10 w-10 rounded-full object-cover border-2 border-white shadow"
+              className="h-16 w-16 rounded-full object-contain border-2 border-white shadow"
               style={{ background: "#fff" }}
             />
             <div>
-              <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
-              <div className="text-xs hidden sm:block" style={{ color: "#eee" }}>Japan-Bangladesh Chamber</div>
+              <span className="text-2xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
+              <div className="text-sm hidden sm:block" style={{ color: "#eee" }}>Japan-Bangladesh Chamber</div>
             </div>
           </div>
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden md:flex space-x-10 items-center text-lg">
             <Link to="/" className="font-medium transition-colors" style={{ color: "#fff" }}>HOME</Link>
             <Link to="/membership" className="font-medium transition-colors hover:text-yellow-400" style={{ color: "#fff" }}>Membership</Link>
             <div
@@ -197,6 +197,15 @@ const Navbar: React.FC = () => {
             <Link to="/news-&-events" className="font-medium transition-colors hover:text-yellow-400" style={{ color: "#fff" }}>News & Events</Link>
             <Link to="/contact-us" className="font-medium transition-colors hover:text-yellow-400" style={{ color: "#fff" }}>Contact Us</Link>
             <Link to="/publications" className="font-medium transition-colors hover:text-yellow-400" style={{ color: "#fff" }}>Publications</Link>
+            {showLoginButton && (
+              <button
+                className="ml-4 px-6 py-2 font-semibold rounded-full transition-colors"
+                style={{ background: SECONDARY, color: PRIMARY }}
+                onClick={() => navigate('/login_page')}
+              >
+                Login
+              </button>
+            )}
           </nav>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -218,6 +227,18 @@ const Navbar: React.FC = () => {
             <Link to="/news-&-events" className="block px-3 py-2 font-medium" style={{ color: "#fff" }} onClick={() => setIsMenuOpen(false)}>News & Events</Link>
             <Link to="/contact-us" className="block px-3 py-2 font-medium" style={{ color: "#fff" }} onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
             <Link to="/publications" className="block px-3 py-2 font-medium" style={{ color: "#fff" }} onClick={() => setIsMenuOpen(false)}>Publications</Link>
+            {showLoginButton && (
+              <button
+                className="block w-full mt-2 px-3 py-2 font-semibold rounded-full transition-colors"
+                style={{ background: SECONDARY, color: PRIMARY }}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  navigate('/login_page');
+                }}
+              >
+                Login
+              </button>
+            )}
           </div>
         </div>
       )}
