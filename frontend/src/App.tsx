@@ -20,7 +20,8 @@ import {
   TrendingUp,
   Handshake,
   FileText,
-  UserCheck
+  UserCheck,
+  ChevronLeft
 } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import AboutUs from './Pages/AboutUs';
@@ -37,9 +38,37 @@ import BoardOfDirectors2022_24 from './Pages/BoardOfDirectorsPages/BoardOfDirect
 import BoardOfDirectors2020_22 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2020_22';
 import BoardOfDirectors2018_20 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2018_20';
 
+// Import landing page images
+import landingImage1 from './assets/landing_page/1.jpg';
+import landingImage2 from './assets/landing_page/2.jpg';
+import landingImage3 from './assets/landing_page/3.jpg';
+import landingImage4 from './assets/landing_page/4.jpg';
+import landingImage5 from './assets/landing_page/5.jpg';
+import landingImage6 from './assets/landing_page/6.jpg';
+import landingImage7 from './assets/landing_page/7.jpg';
+import landingImage8 from './assets/landing_page/8.jpg';
+import landingImage9 from './assets/landing_page/9.jpg';
+import landingImage10 from './assets/landing_page/10.jpg';
+import landingImage11 from './assets/landing_page/11.jpg';
+
 // THEME COLORS
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
+
+// Carousel images array
+const carouselImages = [
+  landingImage1,
+  landingImage2,
+  landingImage3,
+  landingImage4,
+  landingImage5,
+  landingImage6,
+  landingImage7,
+  landingImage8,
+  landingImage9,
+  landingImage10,
+  landingImage11
+];
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -52,11 +81,23 @@ function ScrollToTopOnRouteChange() {
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -69,6 +110,22 @@ function HomePage() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
   };
 
   const boardMembers = [
@@ -166,16 +223,70 @@ function HomePage() {
                 </Link>
               </div>
             </div>
-            {/* Hero Image Placeholder */}
+            
+            {/* Hero Image Carousel */}
             <div className="relative flex flex-col items-center">
-              <div className="w-full h-80 md:h-96 bg-gray-200 rounded-xl flex items-center justify-center text-gray-400 text-2xl font-bold mb-4">
-                Hero Image
-              </div>
-              <div className="flex gap-4">
-                {[1, 2, 3].map(num => (
-                  <div key={num} className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 font-bold">
-                    Img {num}
+              <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-2xl mb-4">
+                {/* Main carousel image */}
+                <div className="relative w-full h-full">
+                  <img
+                    src={carouselImages[currentImageIndex]}
+                    alt={`JBCCI Event ${currentImageIndex + 1}`}
+                    className="w-full h-full object-cover transition-opacity duration-500"
+                  />
+                  
+                  {/* Navigation arrows */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                  
+                  {/* Dots indicator */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {carouselImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToImage(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                          index === currentImageIndex 
+                            ? 'bg-white scale-110' 
+                            : 'bg-white/50 hover:bg-white/75'
+                        }`}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
                   </div>
+                </div>
+              </div>
+              
+              {/* Thumbnail navigation */}
+              <div className="flex gap-2 overflow-x-auto pb-2 max-w-full">
+                {carouselImages.slice(0, 5).map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                      index === currentImageIndex 
+                        ? 'border-yellow-400 scale-110' 
+                        : 'border-gray-300 hover:border-gray-400'
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
                 ))}
               </div>
             </div>
@@ -283,7 +394,7 @@ function HomePage() {
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>ICOSA holds SMEs seminar</h3>
               <p className="text-gray-700 text-base">
-                A seminar titled “Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead”
+                A seminar titled "Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead"
               </p>
             </div>
           </div>
