@@ -29,7 +29,7 @@ import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
 import Publications from './Pages/Publications';
 import MembershipFormPage from './Pages/MembershipFomrPage';
-import BoardOfDirectors from './Pages/BoardOfDirectors';
+import BoardOfDirectors from './Pages/BoardofDirectors';
 import SecretariateOfJBCCI from './Pages/SecretariateOfJBCCI';
 import Gallery from './Pages/Gallery';
 import BoardOfDirectors2024_26 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2024_26';
@@ -436,9 +436,9 @@ function HomePage() {
             </div>
           </div>
           <div className="border-t border-[#e6aa05] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm" style={{color:"#eee"}}>
-              © 2024 Japan-Bangladesh Chamber of Commerce and Industry. All rights reserved.
-            </p>
+               <p className="text-sm text-center" style={{ color: "#eee" }}>
+                  ©Japan Bangladesh Chamber of Commerce || Powered by Techknowgram Limited
+               </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a>
               <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Terms of Service</a>
