@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 import { Target, Globe, Zap, CheckCircle } from 'lucide-react';
 
 const AboutUs: React.FC = () => (
@@ -90,6 +91,7 @@ const AboutUs: React.FC = () => (
         </div>
       </section>
     </div>
+    <Footer/>
   </>
 );
 

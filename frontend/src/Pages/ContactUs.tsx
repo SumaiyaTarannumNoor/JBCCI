@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer'
 
 const officials = [
   {
@@ -184,6 +185,7 @@ const ContactUs: React.FC = () => (
         </footer>
       </section>
     </div>
+    <Footer/>
   </>
 );
 

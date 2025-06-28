@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer'
 
 const newsletters = [
   { title: "JBCCI Newsletter 62 Issue", link: "#" },
@@ -56,6 +57,7 @@ const NewsAndEvents: React.FC = () => (
         </footer>
       </section>
     </div>
+    <Footer/>
   </>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer'
 
 const directors = [
   { name: "Mr. Tareq Rafi Bhuiyan (Jun)", position: "President" },
@@ -135,6 +136,7 @@ const Membership: React.FC = () => (
         </footer>
       </section>
     </div>
+    <Footer/>
   </>
 );
 

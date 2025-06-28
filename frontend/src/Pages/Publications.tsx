@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer'
 import { FileText, BookOpen, Globe } from 'lucide-react';
 
 const Publications: React.FC = () => (
@@ -51,6 +52,7 @@ const Publications: React.FC = () => (
         </div>
       </section>
     </div>
+    <Footer/>
   </>
 );
 
