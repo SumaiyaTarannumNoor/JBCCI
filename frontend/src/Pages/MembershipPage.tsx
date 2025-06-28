@@ -1,88 +1,141 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import { Users, Globe, Building2, Handshake, UserCheck } from 'lucide-react';
 
-const MembershipPage: React.FC = () => (
+const directors = [
+  { name: "Mr. Tareq Rafi Bhuiyan (Jun)", position: "President" },
+  { name: "Mr. Md. Anwar Shahid", position: "Vice President" },
+  { name: "Mr. Hiroaki Oura", position: "Vice President" },
+  { name: "Ms. Maria Howlader FCA", position: "Secretary General" },
+  { name: "Mr. Yuji Ando", position: "Joint Secretary General" },
+  { name: "Mr. Kenji Kimura", position: "Treasurer" },
+  { name: "Mr. Md. Jahangir Alam Sharker", position: "Joint Treasurer" },
+  { name: "Mr. Manabu Sugawara", position: "Director" },
+  { name: "Mr. Mohammed Sohel", position: "Director" },
+  { name: "Mr. Md. Shariful Alam", position: "Director" },
+  { name: "Mr. Nayeemur Rahman", position: "Director" },
+  { name: "Mr. Abu Zaman Md. Tariqul Islam", position: "Director" },
+  { name: "Mr. AKM Ahmedul Islam BABU", position: "Director" },
+  { name: "Mr. Hiroshi Uegaki", position: "Director" },
+  { name: "Mr. Rabiul Alam", position: "Director" },
+  { name: "Mr. Atsushi Hirakuri", position: "Director" },
+  { name: "Mr. Asif A. Chowdhury", position: "Advisor to the Board" },
+  { name: "Ms. Tahera Ahsan", position: "Executive Director" }
+];
+
+const Membership: React.FC = () => (
   <>
     <Navbar />
-    <div className="pt-16">
-      <section id="membership" className="py-20 bg-white min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Members
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Become a Member of JBCCI and join our growing community of business professionals, entrepreneurs, and organizations 
-              working together for the advancement of Japan-Bangladesh relations.
+    <div className="pt-16 bg-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
+            Japan Bangladesh Chamber of Commerce and Industry (JBCCI)
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            An Association to develop business between Bangladesh and Japan
+          </p>
+        </div>
+
+        {/* Who we are, What we do, Why we do it */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="bg-red-50 rounded-xl p-6 shadow">
+            <h2 className="font-bold text-xl mb-2 text-red-700">Who we are</h2>
+            <p className="text-gray-700 text-base">
+              JBCCI was formed when we were feeling the extreme need of starting a new trade regime with stronger mutual presence in each other's market. A well-timed address by H.E. Mr. Matsushiro Horiguchi, Hon'ble Ambassador of Japan in Bangladesh at the National Press Club in Dhaka expressed deep sense of commitment of Japan for peace, prosperity and development of our country as a nation-state. It was possible to form JBCCI with the direct support and co-operation of JETRO (Japan External Trade Organization), which is operating for trade and investment promotion in Bangladesh as Japan Government's agency for the last 35 years. The leadership of former Presidents Mr. Matiur Rahman and Mr. Hideo Ueno has enriched JBCCI stepping forward from its inception.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="text-center group">
-              <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors">
-                <Users className="h-10 w-10 text-red-600" />
-              </div>
-              <div className="text-4xl font-bold text-red-600 mb-2">340</div>
-              <div className="text-gray-600 font-medium">TOTAL MEMBERS</div>
-            </div>
-            <div className="text-center group">
-              <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                <Globe className="h-10 w-10 text-green-600" />
-              </div>
-              <div className="text-4xl font-bold text-green-600 mb-2">241</div>
-              <div className="text-gray-600 font-medium">BANGLADESHI</div>
-            </div>
-            <div className="text-center group">
-              <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
-                <Building2 className="h-10 w-10 text-blue-600" />
-              </div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">75</div>
-              <div className="text-gray-600 font-medium">JAPANESE</div>
-            </div>
-            <div className="text-center group">
-              <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
-                <Handshake className="h-10 w-10 text-orange-600" />
-              </div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">24</div>
-              <div className="text-gray-600 font-medium">JOINT VENTURE & MNC</div>
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-red-50 to-green-50 rounded-2xl p-8 text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join JBCCI Today</h3>
-            <p className="text-gray-600 mb-6">
-              Become part of our vibrant community and unlock opportunities for business growth, networking, and collaboration between Japan and Bangladesh.
+          <div className="bg-green-50 rounded-xl p-6 shadow">
+            <h2 className="font-bold text-xl mb-2 text-green-700">What we do</h2>
+            <p className="text-gray-700 text-base">
+              To follow up the reports of the "Bangladesh-Japan Joint Committee for Commercial and Economic Cooperation" and to help in early implementation of its recommendations. To cooperate with appropriate organizations for promoting cultural exchange and friendship between Japan and Bangladesh. To collect market/economic information of Bangladesh and provide it to the Japanese people when required. To maintain liaison with the MEDIA and encourage wide coverage of JBCCI activities. To look into the difficulties/obstacles members are facing with import/export, duty structures, transportation, dumping / antidumping, IPR or other trade related issues.
             </p>
-            <button className="inline-flex items-center px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold">
-              Apply for Membership
-              <UserCheck className="ml-2 h-5 w-5" />
-            </button>
           </div>
-          <div className="mt-20 max-w-3xl mx-auto text-center">
-            <h4 className="text-xl font-bold text-gray-900 mb-2">Membership Benefits</h4>
-            <ul className="text-left list-disc list-inside text-gray-700 space-y-2">
-              <li>Access to exclusive networking opportunities and business events</li>
-              <li>Inclusion in the JBCCI business directory</li>
-              <li>Regular updates on trade and investment opportunities</li>
-              <li>Support and guidance for Japan-Bangladesh business relations</li>
-              <li>Participation in seminars, workshops, and annual general meetings</li>
-            </ul>
-          </div>
-          <div className="mt-20 max-w-3xl mx-auto">
-            <h4 className="text-xl font-bold text-gray-900 mb-4 text-center">How to Apply?</h4>
-            <ol className="list-decimal list-inside text-gray-700 space-y-2">
-              <li>Download the membership application form from the JBCCI website or contact our secretariat.</li>
-              <li>Fill in all required details and attach relevant documents.</li>
-              <li>Submit the application via email or at the JBCCI Secretariat office.</li>
-              <li>Our board will review your application and notify you of the decision.</li>
-            </ol>
-            <div className="mt-6 text-center text-gray-500">
-              For any queries, email us at <a href="mailto:info@jbcci.org" className="text-red-600 hover:underline">info@jbcci.org</a>
-            </div>
+          <div className="bg-blue-50 rounded-xl p-6 shadow">
+            <h2 className="font-bold text-xl mb-2 text-blue-700">Why we do it</h2>
+            <p className="text-gray-700 text-base">
+              Japan and Bangladesh are two friendly countries and this relationship has contributed in socio economic development, culture, education, infrastructure, know how transfer, trade, business migration, human resource exchange with skills development, capacity building and in many areas.
+            </p>
           </div>
         </div>
+
+        {/* Office Placeholder Images */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-center mb-4">Check out our cool office</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {[1,2,3,4,5].map(i => (
+              <div key={i} className="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-4xl font-bold">
+                Image {i}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Directors */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-center mb-6">Our Directors</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {directors.map((director, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full bg-gray-200 mb-3 flex items-center justify-center text-3xl text-gray-400 font-bold">
+                  <span>Img</span>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900">{director.name}</h3>
+                  <p className="text-sm text-gray-600">{director.position}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Objectives */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-center mb-4">Objectives of JBCCI</h2>
+          <ul className="max-w-xl mx-auto list-disc list-inside text-gray-700 space-y-2">
+            <li>To collect and provide business information in Bangladesh and Japan.</li>
+            <li>To promote the two-way trade and investment between Japan and Bangladesh.</li>
+            <li>To explore new areas of investment and encourage the establishment of Japan-Bangladesh joint ventures in Japan and Bangladesh.</li>
+            <li>To identify areas of difficulties in investment and important trade barriers and take steps to overcome those.</li>
+            <li>To arrange training programs / workshops / seminars for Human Resource Development and others in both Bangladesh and Japan.</li>
+          </ul>
+        </div>
+
+        {/* Activities and Merits */}
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-xl font-bold mb-2 text-red-700">Our Activities</h2>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>Trade Fair: JBCCI members will get the opportunity to participate in Trade Fairs organized by JBCCI (in Bangladesh and in Japan) at a discounted rate.</li>
+              <li>Seminars/Workshops: JBCCI members will get the priority to join the Seminars/Workshops organized by JBCCI at special rate along with other facilities.</li>
+              <li>Investment Benefits: For interested companies who are looking for joint Venture with Japanese Company, JBCCI will provide all possible relevant information on potential Japanese investors. For companies who are interested to invest in Japan, JBCCI will provide information about Japanese Investment Climate and Investment Procedure.</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold mb-2 text-green-700">Merits of JBCCI Membership</h2>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>Information Services: JBCCI members will be provided with important business information services.</li>
+              <li>Export: For Bangladeshi Exporters, JBCCI will provide related information about Japanese Importers and necessary Market Information of Japan.</li>
+              <li>Import: For Bangladeshi Importers, JBCCI will provide related information about Japanese Exporters.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Be Our Member */}
+        <div className="mb-12 text-center bg-gradient-to-r from-red-50 to-green-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-2">BE OUR MEMBER</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Japan and Bangladesh are two friendly countries and this relationship has contributed in socio economic development, culture, education, infrastructure, know how transfer, trade, business migration, infrastructure development, SME, IT Business and human resource exchange with skill development, capacity building and in many areas.
+          </p>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-12 text-center text-gray-500 text-sm">
+          Copyright ©2018 ThemeFuse. All Rights Reserved
+        </footer>
       </section>
     </div>
   </>
 );
 
-export default MembershipPage;
+export default Membership;
