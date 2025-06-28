@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Building2 } from 'lucide-react';
+import { Menu, X, Building2, ChevronDown } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const location = useLocation();
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -15,7 +17,24 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsAboutDropdownOpen(false);
   }, [location.pathname]);
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        aboutDropdownRef.current &&
+        !aboutDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsAboutDropdownOpen(false);
+      }
+    };
+    if (isAboutDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isAboutDropdownOpen]);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -30,10 +49,46 @@ const Navbar: React.FC = () => {
               <div className="text-xs text-gray-600 hidden sm:block">Japan-Bangladesh Chamber</div>
             </div>
           </div>
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">HOME</Link>
             <Link to="/membership" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Membership</Link>
-            <Link to="/about-us" className="text-gray-700 hover:text-red-600 transition-colors font-medium">About Us</Link>
+            <div
+              className="relative"
+              ref={aboutDropdownRef}
+              onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              onMouseLeave={() => setIsAboutDropdownOpen(false)}
+            >
+              <button
+                className="flex items-center text-gray-700 hover:text-red-600 transition-colors font-medium focus:outline-none"
+                onClick={() => setIsAboutDropdownOpen((o) => !o)}
+                type="button"
+              >
+                About Us
+                <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              {isAboutDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-56 rounded-lg shadow-lg bg-white border z-50">
+                  <Link
+                    to="/board-of-directors"
+                    className="block px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-t-lg transition-colors"
+                  >
+                    Board of Directors
+                  </Link>
+                  <Link
+                    to="/secretariate-of-jbcci"
+                    className="block px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors"
+                  >
+                    Secretariate of JBCCI
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    className="block px-4 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-b-lg transition-colors"
+                  >
+                    Gallery
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/news-&-events" className="text-gray-700 hover:text-red-600 transition-colors font-medium">News & Events</Link>
             <Link to="/contact-us" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Contact Us</Link>
             <Link to="/publications" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Publications</Link>
@@ -47,12 +102,45 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t shadow-lg">
           <div className="px-4 py-2 space-y-1">
             <Link to="/" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">HOME</Link>
             <Link to="/membership" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">Membership</Link>
-            <Link to="/about-us" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">ABOUT US</Link>
+            {/* About Us Dropdown for mobile */}
+            <div className="relative">
+              <button
+                className="w-full flex items-center justify-between px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors"
+                onClick={() => setIsAboutDropdownOpen((open) => !open)}
+                type="button"
+              >
+                <span>About Us</span>
+                <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isAboutDropdownOpen && (
+                <div className="ml-4 mt-1 space-y-1">
+                  <Link
+                    to="/board-of-directors"
+                    className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded transition-colors"
+                  >
+                    Board of Directors
+                  </Link>
+                  <Link
+                    to="/secretariate-of-jbcci"
+                    className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded transition-colors"
+                  >
+                    Secretariate of JBCCI
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded transition-colors"
+                  >
+                    Gallery
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/news-&-events" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">News & Events</Link>
             <Link to="/contact-us" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">Contact Us</Link>
             <Link to="/publications" className="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">Publications</Link>
