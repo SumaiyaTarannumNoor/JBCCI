@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { Target, Globe, Zap, CheckCircle } from 'lucide-react';
+import logo_banner from '../assets/landing_page/Logo-2024.png';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -21,6 +22,20 @@ const AboutUs: React.FC = () => (
               the business community of Japan and Bangladesh at every step.
             </p>
           </div>
+
+          {/* Logo Banner Section */}
+          <div className="flex justify-center mb-16">
+            <div className="relative">
+              <img
+                src={logo_banner}
+                alt="JBCCI Logo Banner 2024"
+                className="max-w-full h-auto rounded-2xl shadow-lg"
+                style={{ maxHeight: '300px' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="text-center group">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-yellow-100 transition-colors"
