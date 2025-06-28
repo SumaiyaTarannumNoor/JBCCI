@@ -29,7 +29,7 @@ import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
 import Publications from './Pages/Publications';
 import MembershipFormPage from './Pages/MembershipFomrPage';
-import BoardOfDirectors from './Pages/BoardofDirectors';
+import BoardOfDirectors from './Pages/BoardOfDirectors';
 import SecretariateOfJBCCI from './Pages/SecretariateOfJBCCI';
 import Gallery from './Pages/Gallery';
 import BoardOfDirectors2024_26 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2024_26';
