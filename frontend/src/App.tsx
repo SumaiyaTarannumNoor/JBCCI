@@ -29,6 +29,13 @@ import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
 import Publications from './Pages/Publications';
 import MembershipFormPage from './Pages/MembershipFomrPage';
+import BoardOfDirectors from './Pages/BoardofDirectors';
+import SecretariateOfJBCCI from './Pages/SecretariateOfJBCCI';
+import Gallery from './Pages/Gallery';
+import BoardOfDirectors2024_26 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2024_26';
+import BoardOfDirectors2022_24 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2022_24';
+import BoardOfDirectors2020_22 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2020_22';
+import BoardOfDirectors2018_20 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2018_20';
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -452,6 +459,13 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/publications" element={<Publications />} />
         <Route path="/membership-form" element={<MembershipFormPage />} />
+        <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+        <Route path="/secretariate-of-jbcci" element={<SecretariateOfJBCCI />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/board-of-directors/2024-26" element={<BoardOfDirectors2024_26 />} />
+        <Route path="/board-of-directors/2022-24" element={<BoardOfDirectors2022_24 />} />
+        <Route path="/board-of-directors/2020-22" element={<BoardOfDirectors2020_22 />} />
+        <Route path="/board-of-directors/2018-20" element={<BoardOfDirectors2018_20 />} />
       </Routes>
     </Router>
   );
