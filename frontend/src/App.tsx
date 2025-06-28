@@ -37,6 +37,10 @@ import BoardOfDirectors2022_24 from './Pages/BoardOfDirectorsPages/BoardOfDirect
 import BoardOfDirectors2020_22 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2020_22';
 import BoardOfDirectors2018_20 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2018_20';
 
+// THEME COLORS
+const PRIMARY = "#18069e";
+const SECONDARY = "#e6aa05";
+
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -92,72 +96,72 @@ function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrollY > 50 ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-      }`}>
+        scrollY > 50 ? 'shadow-lg' : 'bg-opacity-95 backdrop-blur-sm'
+      }`} style={{background: scrollY > 50 ? PRIMARY : `${PRIMARY}F2`}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <Building2 className="h-8 w-8 text-red-600" />
+              <Building2 className="h-8 w-8" style={{ color: SECONDARY }} />
               <div>
-                <span className="text-xl font-bold text-gray-900">JBCCI</span>
-                <div className="text-xs text-gray-600 hidden sm:block">Japan-Bangladesh Chamber</div>
+                <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
+                <div className="text-xs hidden sm:block" style={{ color: "#eee" }}>Japan-Bangladesh Chamber</div>
               </div>
             </div>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors font-medium">HOME</Link>
-              <Link to="/membership" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Membership</Link>
-              <Link to="/about-us" className="text-gray-700 hover:text-red-600 transition-colors font-medium">About Us</Link>
-              <Link to="/news-&-events" className="text-gray-700 hover:text-red-600 transition-colors font-medium">News & Events</Link>
-              <Link to="/contact-us" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Contact Us</Link>
-              <Link to="/publications" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Publications</Link>
+            <nav className="hidden md:flex space-x-8 items-center">
+              <Link to="/" className="font-medium transition-colors" style={{color: "#fff"}}>HOME</Link>
+              <Link to="/membership" className="font-medium transition-colors hover:text-yellow-400" style={{color: "#fff"}}>Membership</Link>
+              <Link to="/about-us" className="font-medium transition-colors hover:text-yellow-400" style={{color: "#fff"}}>About Us</Link>
+              <Link to="/news-&-events" className="font-medium transition-colors hover:text-yellow-400" style={{color: "#fff"}}>News & Events</Link>
+              <Link to="/contact-us" className="font-medium transition-colors hover:text-yellow-400" style={{color: "#fff"}}>Contact Us</Link>
+              <Link to="/publications" className="font-medium transition-colors hover:text-yellow-400" style={{color: "#fff"}}>Publications</Link>
             </nav>
             {/* Mobile menu button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-[#e6aa05]/10 transition-colors">
+              {isMenuOpen ? <X className="h-6 w-6" style={{color:SECONDARY}} /> : <Menu className="h-6 w-6" style={{color:SECONDARY}} />}
             </button>
           </div>
         </div>
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t shadow-lg">
+          <div className="md:hidden" style={{background: PRIMARY}}>
             <div className="px-4 py-2 space-y-1">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">HOME</Link>
-              <Link to="/membership" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">MEMBERSHIP</Link>
-              <Link to="/about-us" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">ABOUT US</Link>
-              <Link to="/news-&-events" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">NEWS & EVENTS</Link>
-              <Link to="/contact-us" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">CONTACT US</Link>
-              <Link to="/publications" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-colors">PUBLICATIONS</Link>
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>HOME</Link>
+              <Link to="/membership" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>MEMBERSHIP</Link>
+              <Link to="/about-us" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>ABOUT US</Link>
+              <Link to="/news-&-events" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>NEWS & EVENTS</Link>
+              <Link to="/contact-us" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>CONTACT US</Link>
+              <Link to="/publications" onClick={() => setIsMenuOpen(false)} className="block w-full text-left px-3 py-2 font-medium" style={{color: "#fff"}}>PUBLICATIONS</Link>
             </div>
           </div>
         )}
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-red-50 via-white to-green-50">
+      <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-[#edeafd] via-white to-[#fff8e3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2" style={{background: `${SECONDARY}22`, color: SECONDARY, borderRadius: 999}}>
                 <Handshake className="h-4 w-4 mr-2" />
                 Japan & Bangladesh Business Development
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold" style={{color: PRIMARY}}>
                 Japan-Bangladesh
-                <span className="text-red-600 block">Chamber of Commerce</span>
-                <span className="text-green-600 block text-3xl md:text-4xl">& Industry</span>
+                <span className="block" style={{ color: SECONDARY }}>Chamber of Commerce</span>
+                <span className="block text-3xl md:text-4xl" style={{ color: PRIMARY, opacity: 0.7 }}>& Industry</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
                 日本バングラデシュ商工会議所 - An association dedicated to promoting trade and investment 
                 between Japan and Bangladesh for mutual economic prosperity and development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/membership" className="inline-flex items-center px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold group">
+                <Link to="/membership" className="inline-flex items-center px-8 py-4 font-semibold group rounded-lg" style={{background: PRIMARY, color: "#fff"}}>
                   Become a Member
                   <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/about-us" className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors font-semibold">
+                <Link to="/about-us" className="inline-flex items-center px-8 py-4 border-2 rounded-lg font-semibold" style={{borderColor: SECONDARY, color: SECONDARY}}>
                   Learn More
                 </Link>
               </div>
@@ -207,23 +211,23 @@ function HomePage() {
       </section>
 
       {/* About/Objective Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20" style={{background: "#f9f8ff"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Japan-Bangladesh Chamber of Commerce & Industry (JBCCI)</h2>
-              <p className="text-lg text-gray-600 mb-2">
+              <h2 className="text-3xl font-bold mb-4" style={{color: PRIMARY}}>Japan-Bangladesh Chamber of Commerce & Industry (JBCCI)</h2>
+              <p className="text-lg text-gray-700 mb-2">
                 日本バングラデシュ商工会議所 an association for Japan & Bangladesh Business Development
               </p>
-              <h4 className="mt-8 text-xl font-semibold text-red-700 mb-2">Objective</h4>
+              <h4 className="mt-8 text-xl font-semibold mb-2" style={{color: SECONDARY}}>Objective</h4>
               <p className="text-gray-700">
                 With the valuable expertise of the honorable members from different business fields from both the countries, JBCCI is committed to serve the business community of Japan and Bangladesh at every step of promoting trade and investment for economic prosperity.
               </p>
-              <h4 className="mt-8 text-xl font-semibold text-green-700 mb-2">Mission & Vision</h4>
+              <h4 className="mt-8 text-xl font-semibold mb-2" style={{color: PRIMARY}}>Mission & Vision</h4>
               <p className="text-gray-700">
                 With the valuable expertise of the honorable members from different business fields from both the countries, JBCCI is committed to serve the business community of Japan and Bangladesh at every step of promoting trade and investment for economic ..
               </p>
-              <h4 className="mt-8 text-xl font-semibold text-blue-700 mb-2">Activities</h4>
+              <h4 className="mt-8 text-xl font-semibold mb-2" style={{color: SECONDARY}}>Activities</h4>
               <p className="text-gray-700">
                 To Collect and provide business information in Bangladesh and Japan.To promote the two – way trade and investment between Japan and Bangladesh.To explore new areas of investment and encourage the establishment of Japan-Bangladesh joint –.
               </p>
@@ -234,7 +238,7 @@ function HomePage() {
             </div>
           </div>
           <div className="text-center">
-            <h4 className="text-xl font-semibold mb-2">Our Plan to develop SME sector of Japan & Bangladesh</h4>
+            <h4 className="text-xl font-semibold mb-2" style={{color: PRIMARY}}>Our Plan to develop SME sector of Japan & Bangladesh</h4>
             <div className="flex flex-wrap justify-center gap-6">
               {[
                 "Increase Japanese Investment in Bangladesh",
@@ -252,33 +256,33 @@ function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Activities in the Press</h2>
+            <h2 className="text-3xl font-bold mb-4" style={{color: PRIMARY}}>Activities in the Press</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
+            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
               <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
                 Press Img 1
               </div>
-              <h3 className="text-lg font-semibold mb-2">Japanese Firms bullish on Bangladesh</h3>
-              <p className="text-gray-600 text-base">
+              <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>Japanese Firms bullish on Bangladesh</h3>
+              <p className="text-gray-700 text-base">
                 The majority of Japanese companies operating in Bangladesh plan to go for business expansion over the next two years thanks to cheap labour and high profitability, according to a survey conducted by Japan External Trade Organization (Jetro).
               </p>
             </div>
-            <div className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
+            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
               <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
                 Press Img 2
               </div>
-              <h3 className="text-lg font-semibold mb-2">Japanese Companies Want to Invest in BD</h3>
-              <p className="text-gray-600 text-base">
+              <h3 className="text-lg font-semibold mb-2" style={{color: SECONDARY}}>Japanese Companies Want to Invest in BD</h3>
+              <p className="text-gray-700 text-base">
                 70pc Japanese firms in Bangladesh want to expand business.
               </p>
             </div>
-            <div className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
+            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
               <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
                 Press Img 3
               </div>
-              <h3 className="text-lg font-semibold mb-2">ICOSA holds SMEs seminar</h3>
-              <p className="text-gray-600 text-base">
+              <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>ICOSA holds SMEs seminar</h3>
+              <p className="text-gray-700 text-base">
                 A seminar titled “Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead”
               </p>
             </div>
@@ -287,13 +291,13 @@ function HomePage() {
       </section>
 
       {/* Board Members Section */}
-      <section id="board" className="py-20 bg-gray-50">
+      <section id="board" className="py-20" style={{background:"#f9f8ff"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
               Board Members 2024-2026
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Meet our distinguished board members who guide JBCCI's vision and strategic direction.
             </p>
           </div>
@@ -302,27 +306,37 @@ function HomePage() {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
                 <div className="relative mb-4">
                   <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
-                    member.position.includes('PRESIDENT') ? 'bg-gradient-to-br from-red-500 to-red-600' :
-                    member.position.includes('VICE PRESIDENT') ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
-                    member.position.includes('SECRETARY') ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
-                    member.position.includes('TREASURER') ? 'bg-gradient-to-br from-green-500 to-green-600' :
-                    member.position.includes('ADVISOR') ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
-                    member.position.includes('EXECUTIVE') ? 'bg-gradient-to-br from-teal-500 to-teal-600' :
-                    'bg-gradient-to-br from-gray-500 to-gray-600'
-                  }`}>
+                    member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                  }`}
+                    style={{
+                      background: member.position.includes('PRESIDENT')
+                        ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                        : member.position.includes('VICE PRESIDENT')
+                        ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                        : member.position.includes('SECRETARY')
+                        ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                        : member.position.includes('TREASURER')
+                        ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                        : member.position.includes('ADVISOR')
+                        ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                        : member.position.includes('EXECUTIVE')
+                        ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                        : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                    }}>
                     {member.initials}
                   </div>
                 </div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
-                <p className={`text-xs font-medium mb-2 ${
-                  member.position.includes('PRESIDENT') ? 'text-red-600' :
-                  member.position.includes('VICE PRESIDENT') ? 'text-orange-600' :
-                  member.position.includes('SECRETARY') ? 'text-blue-600' :
-                  member.position.includes('TREASURER') ? 'text-green-600' :
-                  member.position.includes('ADVISOR') ? 'text-purple-600' :
-                  member.position.includes('EXECUTIVE') ? 'text-teal-600' :
-                  'text-gray-600'
-                }`}>
+                <p className={`text-xs font-medium mb-2`} style={{
+                  color:
+                    member.position.includes('PRESIDENT') ? SECONDARY :
+                    member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
+                    member.position.includes('SECRETARY') ? PRIMARY :
+                    member.position.includes('TREASURER') ? "#18c06e" :
+                    member.position.includes('ADVISOR') ? "#9005e6" :
+                    member.position.includes('EXECUTIVE') ? "#0fdad8" :
+                    "#222"
+                }}>
                   {member.position}
                 </p>
               </div>
@@ -335,100 +349,100 @@ function HomePage() {
       <section id="members" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
               Our Members
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               You can become a Member of JBCCI and join our growing community of business professionals.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="text-center group">
-              <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors">
-                <Users className="h-10 w-10 text-red-600" />
+              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background:SECONDARY + "22"}}>
+                <Users className="h-10 w-10" style={{color:SECONDARY}} />
               </div>
-              <div className="text-4xl font-bold text-red-600 mb-2">340</div>
-              <div className="text-gray-600 font-medium">TOTAL MEMBERS</div>
+              <div className="text-4xl font-bold" style={{color:SECONDARY}}>340</div>
+              <div className="text-gray-700 font-medium">TOTAL MEMBERS</div>
             </div>
             <div className="text-center group">
-              <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
-                <Globe className="h-10 w-10 text-green-600" />
+              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
+                <Globe className="h-10 w-10" style={{color: PRIMARY}} />
               </div>
-              <div className="text-4xl font-bold text-green-600 mb-2">241</div>
-              <div className="text-gray-600 font-medium">BANGLADESHI</div>
+              <div className="text-4xl font-bold" style={{color: PRIMARY}}>241</div>
+              <div className="text-gray-700 font-medium">BANGLADESHI</div>
             </div>
             <div className="text-center group">
-              <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
-                <Building2 className="h-10 w-10 text-blue-600" />
+              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
+                <Building2 className="h-10 w-10" style={{color: PRIMARY}} />
               </div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">75</div>
-              <div className="text-gray-600 font-medium">JAPANESE</div>
+              <div className="text-4xl font-bold" style={{color: PRIMARY}}>75</div>
+              <div className="text-gray-700 font-medium">JAPANESE</div>
             </div>
             <div className="text-center group">
-              <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
-                <Handshake className="h-10 w-10 text-orange-600" />
+              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: SECONDARY + "22"}}>
+                <Handshake className="h-10 w-10" style={{color: SECONDARY}} />
               </div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">24</div>
-              <div className="text-gray-600 font-medium">JOINT VENTURE & MNC</div>
+              <div className="text-4xl font-bold" style={{color: SECONDARY}}>24</div>
+              <div className="text-gray-700 font-medium">JOINT VENTURE & MNC</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer style={{background: PRIMARY}} className="text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <Building2 className="h-8 w-8 text-red-400" />
+                <Building2 className="h-8 w-8" style={{ color: SECONDARY }} />
                 <div>
-                  <span className="text-xl font-bold">JBCCI</span>
-                  <div className="text-sm text-gray-400">Japan-Bangladesh Chamber of Commerce and Industry</div>
+                  <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
+                  <div className="text-sm" style={{ color: "#eee" }}>Japan-Bangladesh Chamber of Commerce and Industry</div>
                 </div>
               </div>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <p className="mb-6 max-w-md" style={{color:"#eee"}}>
                 日本バングラデシュ商工会議所 - Promoting trade and investment between Japan and Bangladesh for mutual economic prosperity since our establishment.
               </p>
               <div className="flex space-x-4">
-                <button className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors">
-                  <Globe className="h-5 w-5" />
+                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
+                  <Globe className="h-5 w-5" style={{color: SECONDARY}} />
                 </button>
-                <button className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors">
-                  <Mail className="h-5 w-5" />
+                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
+                  <Mail className="h-5 w-5" style={{color: SECONDARY}} />
                 </button>
-                <button className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors">
-                  <Phone className="h-5 w-5" />
+                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
+                  <Phone className="h-5 w-5" style={{color: SECONDARY}} />
                 </button>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link to="/about-us" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/membership" className="hover:text-white transition-colors">Membership</Link></li>
-                <li><Link to="/news-&-events" className="hover:text-white transition-colors">News & Events</Link></li>
-                <li><Link to="/contact-us" className="hover:text-white transition-colors">Contact</Link></li>
+              <h3 className="text-lg font-semibold mb-4" style={{color: SECONDARY}}>Quick Links</h3>
+              <ul className="space-y-2" style={{color:"#eee"}}>
+                <li><Link to="/about-us" className="hover:text-yellow-400 transition-colors">About Us</Link></li>
+                <li><Link to="/membership" className="hover:text-yellow-400 transition-colors">Membership</Link></li>
+                <li><Link to="/news-&-events" className="hover:text-yellow-400 transition-colors">News & Events</Link></li>
+                <li><Link to="/contact-us" className="hover:text-yellow-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Business Directory</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Trade Opportunities</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Investment Guide</a></li>
-                <li><Link to="/publications" className="hover:text-white transition-colors">Publications</Link></li>
+              <h3 className="text-lg font-semibold mb-4" style={{color: SECONDARY}}>Resources</h3>
+              <ul className="space-y-2" style={{color:"#eee"}}>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Business Directory</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Trade Opportunities</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Investment Guide</a></li>
+                <li><Link to="/publications" className="hover:text-yellow-400 transition-colors">Publications</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+          <div className="border-t border-[#e6aa05] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm" style={{color:"#eee"}}>
               © 2024 Japan-Bangladesh Chamber of Commerce and Industry. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Code of Conduct</a>
+              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a>
+              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Terms of Service</a>
+              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Code of Conduct</a>
             </div>
           </div>
         </div>
@@ -438,7 +452,15 @@ function HomePage() {
       {scrollY > 500 && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors z-50"
+          className="fixed bottom-8 right-8"
+          style={{
+            background: SECONDARY,
+            color: "#fff",
+            padding: "0.75rem",
+            borderRadius: "9999px",
+            boxShadow: "0 10px 20px 0 #0002",
+            zIndex: 50
+          }}
         >
           <ArrowUp className="h-6 w-6" />
         </button>
