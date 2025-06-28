@@ -1,97 +1,59 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import { TrendingUp, Building2, Users, Calendar, Star, Award, BookOpen, ChevronRight } from 'lucide-react';
+
+const newsletters = [
+  { title: "JBCCI Newsletter 62 Issue", link: "#" },
+  { title: "JBCCI Newsletter 61 Issue", link: "#" },
+  { title: "JBCCI Newsletter 60th Issue", link: "#" },
+  { title: "JBCCI Newsletter 59th Issue", link: "#" },
+  { title: "JBCCI Newsletter 58th Issue", link: "#" },
+  { title: "JBCCI Newsletter 57th Issue", link: "#" },
+  { title: "JBCCI Newsletter 55th Issue", link: "#" },
+  { title: "JBCCI Newsletter 54th Issue", link: "#" },
+  { title: "JBCCI Newsletter 53rd Issue", link: "#" }
+];
 
 const NewsAndEvents: React.FC = () => (
   <>
     <Navbar />
-    <div className="pt-16">
-      <section id="news" className="py-20 bg-gray-50 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              News & Events
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with our latest activities, events, and press coverage.
-            </p>
+    <div className="pt-16 bg-gradient-to-br from-red-50 via-white to-green-50 min-h-screen">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-5xl font-bold text-red-700 mb-3 tracking-tight drop-shadow-sm">
+            JBCCI Newsletter
+          </h1>
+          <div className="flex justify-center mb-4">
+            <div className="h-1 w-20 bg-gradient-to-r from-red-600 via-green-400 to-red-600 rounded"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
-              <div className="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                <TrendingUp className="h-16 w-16 text-white opacity-50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
-                  Japanese Firms Bullish on Bangladesh
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  The majority of Japanese companies operating in Bangladesh plan to go for business expansion over the next two years thanks to cheap labour and high profitability, according to a survey conducted by Japan External Trade Organization (Jetro).
-                </p>
-                <button className="text-red-600 font-medium hover:text-red-700 transition-colors inline-flex items-center">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
-              </div>
-            </article>
-            <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
-              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <Building2 className="h-16 w-16 text-white opacity-50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                  Japanese Companies Want to Invest in BD
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  70pc Japanese firms in Bangladesh want to expand business, showing strong confidence in the country's economic potential and business environment.
-                </p>
-                <button className="text-green-600 font-medium hover:text-green-700 transition-colors inline-flex items-center">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
-              </div>
-            </article>
-            <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <Users className="h-16 w-16 text-white opacity-50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  ICOSA Holds SMEs Seminar
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  A seminar titled "Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead" highlighting the importance of small and medium enterprises.
-                </p>
-                <button className="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-flex items-center">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
-              </div>
-            </article>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <Calendar className="h-8 w-8 text-red-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">Networking Program</h4>
-              <p className="text-sm text-gray-600">Regular networking events for members</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <Star className="h-8 w-8 text-green-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">International Women's Day</h4>
-              <p className="text-sm text-gray-600">Celebrating women in business</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <Award className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">17th AGM</h4>
-              <p className="text-sm text-gray-600">Annual General Meeting</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <BookOpen className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">Business Seminars</h4>
-              <p className="text-sm text-gray-600">Educational business seminars</p>
-            </div>
+          <p className="text-lg md:text-xl text-green-800 font-semibold mb-2">
+            Regular Activities of JBCCI
+          </p>
+          <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
+            Our networking activities, seminars, trade exhibitions, and business development efforts help grow Bangladesh's business sector. We keep our honorable members up to date through regular newsletters and emails about all our activities.
+          </p>
+        </div>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-center text-green-700">Recent Newsletters</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {newsletters.map((issue, idx) => (
+              <a
+                key={issue.title}
+                href={issue.link}
+                className="group bg-white border border-green-100 hover:border-red-300 rounded-xl px-6 py-5 shadow-md hover:shadow-lg transition duration-200 flex items-center space-x-4"
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-red-200 to-green-200 flex items-center justify-center text-xl font-bold text-red-700 group-hover:text-white group-hover:bg-gradient-to-br group-hover:from-red-600 group-hover:to-green-600 transition">
+                  <span>{62 - idx}</span>
+                </div>
+                <span className="text-lg font-medium text-gray-800 group-hover:text-red-700 transition">
+                  {issue.title}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
+        <footer className="mt-16 text-center text-gray-500 text-sm pt-10 border-t border-red-100">
+          Copyright ©2018 <span className="text-red-700 font-bold">ThemeFuse</span>. All Rights Reserved
+        </footer>
       </section>
     </div>
   </>
