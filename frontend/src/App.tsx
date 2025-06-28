@@ -28,6 +28,7 @@ import MembershipPage from './Pages/MembershipPage';
 import NewsAndEvents from './Pages/NewsAndEvents';
 import ContactUs from './Pages/ContactUs';
 import Publications from './Pages/Publications';
+import MembershipFormPage from './Pages/MembershipFomrPage';
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -450,6 +451,7 @@ function App() {
         <Route path="/news-&-events" element={<NewsAndEvents />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/publications" element={<Publications />} />
+        <Route path="/membership-form" element={<MembershipFormPage />} />
       </Routes>
     </Router>
   );

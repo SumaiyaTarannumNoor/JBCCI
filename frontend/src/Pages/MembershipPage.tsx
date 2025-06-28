@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import MembershipForm from '../Forms/MembershipForm';
 
 const directors = [
   { name: "Mr. Tareq Rafi Bhuiyan (Jun)", position: "President" },
@@ -24,9 +24,7 @@ const directors = [
   { name: "Ms. Tahera Ahsan", position: "Executive Director" }
 ];
 
-const Membership: React.FC = () => {
-  const [showForm, setShowForm] = useState(false);
-
+const MembershipPage: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -65,42 +63,21 @@ const Membership: React.FC = () => {
             </div>
           </div>
 
-          {/* Become a Member Today - Welcome Section (now placed below Who/What/Why) */}
+          {/* Become a Member Today - Welcome Section (connects to membership-form page) */}
           <div className="mb-12">
             <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-10 text-center">
               <h1 className="text-4xl font-bold text-red-700 mb-4">Become Our Member Today!</h1>
               <p className="text-lg text-gray-700 mb-6">
                 Join the Japan-Bangladesh Chamber of Commerce and Industry (JBCCI) and unlock exclusive opportunities for networking, business growth, and international collaboration. Be a part of our vibrant community!
               </p>
-              <button
-                onClick={() => setShowForm(true)}
+              <Link
+                to="/membership-form"
                 className="inline-flex items-center px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold text-lg shadow"
               >
                 Become Our Member Today
-              </button>
+              </Link>
             </div>
           </div>
-
-          {/* Modal for Membership Form */}
-          {showForm && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center">
-              {/* Modal background */}
-              <div
-                className="absolute inset-0 bg-black opacity-60"
-                onClick={() => setShowForm(false)}
-              />
-              {/* Modal content */}
-              <div className="relative z-10 w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-                <button
-                  onClick={() => setShowForm(false)}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold focus:outline-none"
-                  aria-label="Close"
-                >&times;</button>
-                <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">Membership Application Form</h2>
-                <MembershipForm />
-              </div>
-            </div>
-          )}
 
           {/* Office Placeholder Images */}
           <div className="mb-12">
@@ -178,4 +155,4 @@ const Membership: React.FC = () => {
   );
 };
 
-export default Membership;
+export default MembershipPage;
