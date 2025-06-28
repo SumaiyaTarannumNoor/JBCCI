@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Building2, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '../assets/logo/logo.jpg'
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -14,21 +15,18 @@ const Navbar: React.FC = () => {
   const aboutDropdownRef = useRef<HTMLDivElement>(null);
   const boardDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Handle scroll for navbar background
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close all dropdowns on route change
   useEffect(() => {
     setIsMenuOpen(false);
     setIsAboutDropdownOpen(false);
     setIsBoardDropdownOpen(false);
   }, [location.pathname]);
 
-  // Close dropdowns if clicked outside (desktop)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -75,7 +73,12 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <Building2 className="h-8 w-8" style={{ color: SECONDARY }} />
+            <img
+              src={logo}
+              alt="JBCCI Logo"
+              className="h-10 w-10 rounded-full object-cover border-2 border-white shadow"
+              style={{ background: "#fff" }}
+            />
             <div>
               <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
               <div className="text-xs hidden sm:block" style={{ color: "#eee" }}>Japan-Bangladesh Chamber</div>

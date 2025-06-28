@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Globe, Mail, Phone } from 'lucide-react';
+import { Globe, Mail, Phone } from 'lucide-react';
+import logo from '../assets/logo/logo.jpg'
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -11,7 +12,12 @@ const Footer: React.FC = () => (
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-2">
           <div className="flex items-center space-x-3 mb-4">
-            <Building2 className="h-8 w-8" style={{ color: SECONDARY }} />
+            <img
+              src={logo}
+              alt="JBCCI Logo"
+              className="h-10 w-10 rounded-full object-cover border-2 border-white shadow"
+              style={{ background: "#fff" }}
+            />
             <div>
               <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
               <div className="text-sm" style={{ color: "#eee" }}>Japan-Bangladesh Chamber of Commerce and Industry</div>
@@ -51,15 +57,10 @@ const Footer: React.FC = () => (
           </ul>
         </div>
       </div>
-      <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center" style={{ borderColor: SECONDARY }}>
+      <div className="border-t border-[#e6aa05] mt-12 pt-8 flex flex-col md:flex-row justify-center items-center">
         <p className="text-sm text-center" style={{ color: "#eee" }}>
-          ©Japan Bangladesh Chamber of Commerce || Powered by Techknowgram Limited
+          Japan Bangladesh Chamber of Commerce || Powered by Techknowgram Limited
         </p>
-        <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Terms of Service</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Code of Conduct</a>
-        </div>
       </div>
     </div>
   </footer>
