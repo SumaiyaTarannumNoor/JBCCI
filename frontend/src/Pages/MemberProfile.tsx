@@ -106,19 +106,19 @@ const MemberProfile = () => {
   ];
 
   const services = [
-    'BASIS-BRAC Bank Co-Branded Credit Card (VISA)',
-    'BASIS-EBL Co-Branded Credit Card (Mastercard)',
-    'BASIS-MTB-VISA Co-Branded Corporate Business Credit card',
+    'jbcci-BRAC Bank Co-Branded Credit Card (VISA)',
+    'jbcci-EBL Co-Branded Credit Card (Mastercard)',
+    'jbcci-MTB-VISA Co-Branded Corporate Business Credit card',
     'Insurtech Regulatory Sandbox',
-    'BASIS-UCB BANK CO-BRANDED CREDIT CARD (VISA)',
+    'jbcci-UCB BANK CO-BRANDED CREDIT CARD (VISA)',
     'Credit Card- Audit Service (Refill)',
     'Rental Facility'
   ];
 
   const events = [
-    'BASIS Executive Council Election 2024-2026',
-    'BASIS Picnic 2023',
-    'BASIS Japan Day',
+    'jbcci Executive Council Election 2024-2026',
+    'jbcci Picnic 2023',
+    'jbcci Japan Day',
     'Sourcing Bangladesh 2021',
     'WCIT Bangladesh 2021: FREE EXHIBITION BOOTH OFFER Bangladesh Pavilion',
     'DIGITAL WORLD 2020',
@@ -127,8 +127,8 @@ const MemberProfile = () => {
   ];
 
   const resources = [
-    'BASIS Foreign Exchange Manual 2021',
-    'BASIS HR HANDBOOK'
+    'jbcci Foreign Exchange Manual 2021',
+    'jbcci HR HANDBOOK'
   ];
 
   const Sidebar = ({ className = "" }) => (
@@ -248,7 +248,7 @@ const MemberProfile = () => {
                         <p className="font-medium text-sm lg:text-base">TechKnowGram Limited</p>
                       </div>
                       <div>
-                        <label className="text-sm text-gray-600">BASIS Membership No</label>
+                        <label className="text-sm text-gray-600">jbcci Membership No</label>
                         <p className="font-medium text-sm lg:text-base">GE-19-06-737</p>
                       </div>
                     </div>
@@ -345,10 +345,10 @@ const MemberProfile = () => {
 
               {/* Right Sidebar */}
               <div className="space-y-4 lg:space-y-6">
-                {/* BASIS America Desk */}
+                {/* jbcci America Desk */}
                 <div className="bg-white rounded-lg shadow-sm p-4 lg:p-6">
                   <h3 className="text-lg font-semibold mb-4" style={{ color: colors.primary[900] }}>
-                    BASIS AMERICA DESK
+                    jbcci AMERICA DESK
                   </h3>
                   <button 
                     className="w-full py-2 text-white rounded-md text-sm font-medium transition-colors hover:opacity-90"

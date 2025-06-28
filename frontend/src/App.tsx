@@ -29,6 +29,42 @@ import BoardOfDirectors2022_24 from './Pages/BoardOfDirectorsPages/BoardOfDirect
 import BoardOfDirectors2020_22 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2020_22';
 import BoardOfDirectors2018_20 from './Pages/BoardOfDirectorsPages/BoardOfDirectors2018_20';
 
+// Import landing page images
+import landingImage1 from './assets/landing_page/1.jpg';
+import landingImage2 from './assets/landing_page/2.jpg';
+import landingImage3 from './assets/landing_page/3.jpg';
+import landingImage4 from './assets/landing_page/4.jpg';
+import landingImage5 from './assets/landing_page/5.jpg';
+import landingImage6 from './assets/landing_page/6.jpg';
+import landingImage7 from './assets/landing_page/7.jpg';
+import landingImage8 from './assets/landing_page/8.jpg';
+import landingImage9 from './assets/landing_page/9.jpg';
+import landingImage10 from './assets/landing_page/10.jpg';
+import landingImage11 from './assets/landing_page/11.jpg';
+import logo_banner from './assets/landing_page/Logo-2024.png'
+
+// Import people images
+import tareqRafiBhuiyan from './assets/people/Tareq_Rafi.jpg';
+import anwarShahid from './assets/people/Anwar_Shahid.jpg';
+import hiroakiOura from './assets/people/Hiroki_Oura.jpg';
+import mariaHowlader from './assets/people/Mariya_Howladar.jpg';
+import yujiAndo from './assets/people/Yuji_Ando.jpg';
+import kenjiKimura from './assets/people/Kenji_Kimura.jpg';
+import jahangirAlamSharker from './assets/people/Jahangir_Alam.jpg';
+import manabuSugawara from './assets/people/Manabu_Sugawara.jpg';
+import nayeemurRahman from './assets/people/Nayeemur_Rahman.jpg';
+import sharifulAlam from './assets/people/Shariful_Alam.jpg';
+import mohammedSohel from './assets/people/Mohammed_Sohel.jpg';
+import tariqulIslam from './assets/people/Zaman_Tariqul_Islam.jpg';
+import islamBabu from './assets/people/Ahmedul_Islam.jpg';
+import hiroshiUegaki from './assets/people/Hiroshi_Uegaki.jpg';
+import rabiulAlam from './assets/people/Rabiul_Alam.jpg';
+import atsushiHirakuri from './assets/people/Atasuchi_Hirakuri.jpg';
+import asifChowdhury from './assets/people/Asif_Chowdhury.jpg';
+import taheraAhsan from './assets/people/Tahera_Ahsan.jpg';
+import LoginPage from './Pages/LoginPage';
+import MemberProfile from './Pages/MemberProfile';
+
 // THEME COLORS
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -357,201 +393,278 @@ function HomePage() {
           </div>
         </section>
 
-      {/* Activities in the press */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{color: PRIMARY}}>Activities in the Press</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-              <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                Press Img 1
-              </div>
-              <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>Japanese Firms bullish on Bangladesh</h3>
-              <p className="text-gray-700 text-base">
-                The majority of Japanese companies operating in Bangladesh plan to go for business expansion over the next two years thanks to cheap labour and high profitability, according to a survey conducted by Japan External Trade Organization (Jetro).
-              </p>
+        {/* Activities in the press */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4" style={{color: PRIMARY}}>Activities in the Press</h2>
             </div>
-            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-              <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                Press Img 2
-              </div>
-              <h3 className="text-lg font-semibold mb-2" style={{color: SECONDARY}}>Japanese Companies Want to Invest in BD</h3>
-              <p className="text-gray-700 text-base">
-                70pc Japanese firms in Bangladesh want to expand business.
-              </p>
-            </div>
-            <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-              <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                Press Img 3
-              </div>
-              <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>ICOSA holds SMEs seminar</h3>
-              <p className="text-gray-700 text-base">
-                A seminar titled “Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead”
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Board Members Section */}
-      <section id="board" className="py-20" style={{background:"#f9f8ff"}}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
-              Board Members 2024-2026
-            </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Meet our distinguished board members who guide JBCCI's vision and strategic direction.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
-                <div className="relative mb-4">
-                  <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
-                    member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
-                  }`}
-                    style={{
-                      background: member.position.includes('PRESIDENT')
-                        ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
-                        : member.position.includes('VICE PRESIDENT')
-                        ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
-                        : member.position.includes('SECRETARY')
-                        ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
-                        : member.position.includes('TREASURER')
-                        ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
-                        : member.position.includes('ADVISOR')
-                        ? `linear-gradient(135deg, #b15ef9, #8246e6)`
-                        : member.position.includes('EXECUTIVE')
-                        ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
-                        : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
-                    }}>
-                    {member.initials}
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
+                  Press Img 1
                 </div>
-                <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
-                <p className={`text-xs font-medium mb-2`} style={{
-                  color:
-                    member.position.includes('PRESIDENT') ? SECONDARY :
-                    member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
-                    member.position.includes('SECRETARY') ? PRIMARY :
-                    member.position.includes('TREASURER') ? "#18c06e" :
-                    member.position.includes('ADVISOR') ? "#9005e6" :
-                    member.position.includes('EXECUTIVE') ? "#0fdad8" :
-                    "#222"
-                }}>
-                  {member.position}
+                <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>Japanese Firms bullish on Bangladesh</h3>
+                <p className="text-gray-700 text-base">
+                  The majority of Japanese companies operating in Bangladesh plan to go for business expansion over the next two years thanks to cheap labour and high profitability, according to a survey conducted by Japan External Trade Organization (Jetro).
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Members Section */}
-      <section id="members" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
-              Our Members
-            </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              You can become a Member of JBCCI and join our growing community of business professionals.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="text-center group">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background:SECONDARY + "22"}}>
-                <Users className="h-10 w-10" style={{color:SECONDARY}} />
-              </div>
-              <div className="text-4xl font-bold" style={{color:SECONDARY}}>340</div>
-              <div className="text-gray-700 font-medium">TOTAL MEMBERS</div>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
-                <Globe className="h-10 w-10" style={{color: PRIMARY}} />
-              </div>
-              <div className="text-4xl font-bold" style={{color: PRIMARY}}>241</div>
-              <div className="text-gray-700 font-medium">BANGLADESHI</div>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
-                <Building2 className="h-10 w-10" style={{color: PRIMARY}} />
-              </div>
-              <div className="text-4xl font-bold" style={{color: PRIMARY}}>75</div>
-              <div className="text-gray-700 font-medium">JAPANESE</div>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: SECONDARY + "22"}}>
-                <Handshake className="h-10 w-10" style={{color: SECONDARY}} />
-              </div>
-              <div className="text-4xl font-bold" style={{color: SECONDARY}}>24</div>
-              <div className="text-gray-700 font-medium">JOINT VENTURE & MNC</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer style={{background: PRIMARY}} className="text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <Building2 className="h-8 w-8" style={{ color: SECONDARY }} />
-                <div>
-                  <span className="text-xl font-bold" style={{ color: SECONDARY }}>JBCCI</span>
-                  <div className="text-sm" style={{ color: "#eee" }}>Japan-Bangladesh Chamber of Commerce and Industry</div>
+              <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
+                  Press Img 2
                 </div>
+                <h3 className="text-lg font-semibold mb-2" style={{color: SECONDARY}}>Japanese Companies Want to Invest in BD</h3>
+                <p className="text-gray-700 text-base">
+                  70pc Japanese firms in Bangladesh want to expand business.
+                </p>
               </div>
-              <p className="mb-6 max-w-md" style={{color:"#eee"}}>
-                日本バングラデシュ商工会議所 - Promoting trade and investment between Japan and Bangladesh for mutual economic prosperity since our establishment.
+              <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
+                  Press Img 3
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>ICOSA holds SMEs seminar</h3>
+                <p className="text-gray-700 text-base">
+                  A seminar titled "Role of SMEs in the national economy—the case of Japan and how Bangladesh should go ahead"
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Board Members Section */}
+        <section id="board" className="py-20" style={{ background: "#f9f8ff" }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: PRIMARY }}>
+                Board Members 2024-2026
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Meet our distinguished board members who guide JBCCI's vision and strategic direction.
               </p>
-              <div className="flex space-x-4">
-                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
-                  <Globe className="h-5 w-5" style={{color: SECONDARY}} />
-                </button>
-                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
-                  <Mail className="h-5 w-5" style={{color: SECONDARY}} />
-                </button>
-                <button className="p-2 rounded-lg hover:bg-white/10 transition-colors">
-                  <Phone className="h-5 w-5" style={{color: SECONDARY}} />
-                </button>
+            </div>
+            {/* grid-cols-2 for all small screens and devices */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {boardMembers.map((member, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
+                  <div className="relative mb-4">
+                    {member.image ? (
+                      <div className="w-20 h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        <div
+                          className={`w-full h-full rounded-full flex items-center justify-center text-white text-lg font-bold hidden ${
+                            member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                          }`}
+                          style={{
+                            background: member.position.includes('PRESIDENT')
+                              ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                              : member.position.includes('VICE PRESIDENT')
+                                ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                                : member.position.includes('SECRETARY')
+                                  ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                                  : member.position.includes('TREASURER')
+                                    ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                                    : member.position.includes('ADVISOR')
+                                      ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                                      : member.position.includes('EXECUTIVE')
+                                        ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                                        : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                          }}
+                        >
+                          {member.initials}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
+                        member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                      }`}
+                        style={{
+                          background: member.position.includes('PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                            : member.position.includes('VICE PRESIDENT')
+                              ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                              : member.position.includes('SECRETARY')
+                                ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                                : member.position.includes('TREASURER')
+                                  ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                                  : member.position.includes('ADVISOR')
+                                    ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                                    : member.position.includes('EXECUTIVE')
+                                      ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                                      : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                        }}>
+                        {member.initials}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
+                  <p className={`text-xs font-medium mb-2`} style={{
+                    color:
+                      member.position.includes('PRESIDENT') ? SECONDARY :
+                        member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
+                          member.position.includes('SECRETARY') ? PRIMARY :
+                            member.position.includes('TREASURER') ? "#18c06e" :
+                              member.position.includes('ADVISOR') ? "#9005e6" :
+                                member.position.includes('EXECUTIVE') ? "#0fdad8" :
+                                  "#222"
+                  }}>
+                    {member.position}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* Members Section */}
+        <section id="members" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
+                Our Members
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                You can become a Member of JBCCI and join our growing community of business professionals.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="text-center group">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background:SECONDARY + "22"}}>
+                  <Users className="h-10 w-10" style={{color:SECONDARY}} />
+                </div>
+                <div className="text-4xl font-bold" style={{color:SECONDARY}}>340</div>
+                <div className="text-gray-700 font-medium">TOTAL MEMBERS</div>
+              </div>
+              <div className="text-center group">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
+                  <Globe className="h-10 w-10" style={{color: PRIMARY}} />
+                </div>
+                <div className="text-4xl font-bold" style={{color: PRIMARY}}>241</div>
+                <div className="text-gray-700 font-medium">BANGLADESHI</div>
+              </div>
+              <div className="text-center group">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: PRIMARY + "22"}}>
+                  <Building2 className="h-10 w-10" style={{color: PRIMARY}} />
+                </div>
+                <div className="text-4xl font-bold" style={{color: PRIMARY}}>75</div>
+                <div className="text-gray-700 font-medium">JAPANESE</div>
+              </div>
+              <div className="text-center group">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{background: SECONDARY + "22"}}>
+                  <Handshake className="h-10 w-10" style={{color: SECONDARY}} />
+                </div>
+                <div className="text-4xl font-bold" style={{color: SECONDARY}}>24</div>
+                <div className="text-gray-700 font-medium">JOINT VENTURE & MNC</div>
               </div>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4" style={{color: SECONDARY}}>Quick Links</h3>
-              <ul className="space-y-2" style={{color:"#eee"}}>
-                <li><Link to="/about-us" className="hover:text-yellow-400 transition-colors">About Us</Link></li>
-                <li><Link to="/membership" className="hover:text-yellow-400 transition-colors">Membership</Link></li>
-                <li><Link to="/news-&-events" className="hover:text-yellow-400 transition-colors">News & Events</Link></li>
-                <li><Link to="/contact-us" className="hover:text-yellow-400 transition-colors">Contact</Link></li>
-              </ul>
+          </div>
+        </section>
+
+                {/* People Section */}
+        <section id="people" className="py-20" style={{background: "#fff8e3"}}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: PRIMARY}}>
+                Our People
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Meet the dedicated individuals who make JBCCI a thriving community of business professionals.
+              </p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4" style={{color: SECONDARY}}>Resources</h3>
-              <ul className="space-y-2" style={{color:"#eee"}}>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Business Directory</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Trade Opportunities</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Investment Guide</a></li>
-                <li><Link to="/publications" className="hover:text-yellow-400 transition-colors">Publications</Link></li>
-              </ul>
+            
+            {/* Responsive Grid: 2 columns on mobile, more on larger screens */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
+              {boardMembers.map((member, index) => (
+                <div key={index} className="bg-white rounded-lg p-3 sm:p-4 shadow-md hover:shadow-lg transition-shadow group text-center">
+                  <div className="relative mb-3">
+                    {member.image ? (
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto overflow-hidden border-2 border-white shadow-md group-hover:scale-105 transition-transform">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to initials if image fails to load
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        <div 
+                          className={`w-full h-full rounded-full flex items-center justify-center text-white text-sm sm:text-lg font-bold hidden ${
+                            member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                          }`}
+                          style={{
+                            background: member.position.includes('PRESIDENT')
+                              ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                              : member.position.includes('VICE PRESIDENT')
+                              ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                              : member.position.includes('SECRETARY')
+                              ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                              : member.position.includes('TREASURER')
+                              ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                              : member.position.includes('ADVISOR')
+                              ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                              : member.position.includes('EXECUTIVE')
+                              ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                              : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                          }}
+                        >
+                          {member.initials}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto flex items-center justify-center text-white text-sm sm:text-lg font-bold group-hover:scale-105 transition-transform ${
+                        member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                      }`}
+                        style={{
+                          background: member.position.includes('PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                            : member.position.includes('VICE PRESIDENT')
+                            ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                            : member.position.includes('SECRETARY')
+                            ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                            : member.position.includes('TREASURER')
+                            ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                            : member.position.includes('ADVISOR')
+                            ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                            : member.position.includes('EXECUTIVE')
+                            ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                            : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                        }}>
+                        {member.initials}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
+                  <p className={`text-xs font-medium`} style={{
+                    color:
+                      member.position.includes('PRESIDENT') ? SECONDARY :
+                      member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
+                      member.position.includes('SECRETARY') ? PRIMARY :
+                      member.position.includes('TREASURER') ? "#18c06e" :
+                      member.position.includes('ADVISOR') ? "#9005e6" :
+                      member.position.includes('EXECUTIVE') ? "#0fdad8" :
+                      "#222"
+                  }}>
+                    {member.position}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="border-t border-[#e6aa05] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-               <p className="text-sm text-center" style={{ color: "#eee" }}>
-                  ©Japan Bangladesh Chamber of Commerce || Powered by Techknowgram Limited
-               </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Terms of Service</a>
-              <a href="#" className="hover:text-yellow-400 transition-colors text-sm">Code of Conduct</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+        </section>
 
         {/* Scroll to Top Button */}
         {scrollY > 500 && (
@@ -596,7 +709,7 @@ function App() {
         <Route path="/board-of-directors/2020-22" element={<BoardOfDirectors2020_22 />} />
         <Route path="/board-of-directors/2018-20" element={<BoardOfDirectors2018_20 />} />
         <Route path="/login_page" element={<LoginPage />} />
-        <Route path="/login_page/member_profile" element={<MemberProfile />} />
+        <Route path="/member_profile" element={<MemberProfile />} />
       </Routes>
     </Router>
   );
