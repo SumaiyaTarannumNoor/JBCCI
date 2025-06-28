@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
+const PRIMARY = "#18069e";
+const SECONDARY = "#e6aa05";
+
 const directors = [
   { name: "Mr. Tareq Rafi Bhuiyan (Jun)", position: "President" },
   { name: "Mr. Md. Anwar Shahid", position: "Vice President" },
@@ -28,35 +31,35 @@ const MembershipPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-16 bg-white min-h-screen">
+      <div className="pt-16 min-h-screen" style={{ background: "#fff" }}>
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
           {/* Hero Section */}
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3">
+            <h1 className="text-3xl md:text-5xl font-bold mb-3" style={{ color: PRIMARY }}>
               Japan Bangladesh Chamber of Commerce and Industry (JBCCI)
             </h1>
-            <p className="text-lg md:text-xl text-gray-700">
+            <p className="text-lg md:text-xl" style={{ color: SECONDARY }}>
               An Association to develop business between Bangladesh and Japan
             </p>
           </div>
 
           {/* Who we are, What we do, Why we do it */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-red-50 rounded-xl p-6 shadow">
-              <h2 className="font-bold text-xl mb-2 text-red-700">Who we are</h2>
+            <div className="rounded-xl p-6 shadow" style={{ background: PRIMARY + "11" }}>
+              <h2 className="font-bold text-xl mb-2" style={{ color: PRIMARY }}>Who we are</h2>
               <p className="text-gray-700 text-base">
                 JBCCI was formed when we were feeling the extreme need of starting a new trade regime with stronger mutual presence in each other's market. A well-timed address by H.E. Mr. Matsushiro Horiguchi, Hon'ble Ambassador of Japan in Bangladesh at the National Press Club in Dhaka expressed deep sense of commitment of Japan for peace, prosperity and development of our country as a nation-state. It was possible to form JBCCI with the direct support and co-operation of JETRO (Japan External Trade Organization), which is operating for trade and investment promotion in Bangladesh as Japan Government's agency for the last 35 years. The leadership of former Presidents Mr. Matiur Rahman and Mr. Hideo Ueno has enriched JBCCI stepping forward from its inception.
               </p>
             </div>
-            <div className="bg-green-50 rounded-xl p-6 shadow">
-              <h2 className="font-bold text-xl mb-2 text-green-700">What we do</h2>
+            <div className="rounded-xl p-6 shadow" style={{ background: SECONDARY + "11" }}>
+              <h2 className="font-bold text-xl mb-2" style={{ color: SECONDARY }}>What we do</h2>
               <p className="text-gray-700 text-base">
                 To follow up the reports of the "Bangladesh-Japan Joint Committee for Commercial and Economic Cooperation" and to help in early implementation of its recommendations. To cooperate with appropriate organizations for promoting cultural exchange and friendship between Japan and Bangladesh. To collect market/economic information of Bangladesh and provide it to the Japanese people when required. To maintain liaison with the MEDIA and encourage wide coverage of JBCCI activities. To look into the difficulties/obstacles members are facing with import/export, duty structures, transportation, dumping / antidumping, IPR or other trade related issues.
               </p>
             </div>
-            <div className="bg-blue-50 rounded-xl p-6 shadow">
-              <h2 className="font-bold text-xl mb-2 text-blue-700">Why we do it</h2>
+            <div className="rounded-xl p-6 shadow" style={{ background: PRIMARY + "11" }}>
+              <h2 className="font-bold text-xl mb-2" style={{ color: PRIMARY }}>Why we do it</h2>
               <p className="text-gray-700 text-base">
                 Japan and Bangladesh are two friendly countries and this relationship has contributed in socio economic development, culture, education, infrastructure, know how transfer, trade, business migration, human resource exchange with skills development, capacity building and in many areas.
               </p>
@@ -66,13 +69,14 @@ const MembershipPage: React.FC = () => {
           {/* Become a Member Today - Welcome Section (connects to membership-form page) */}
           <div className="mb-12">
             <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-10 text-center">
-              <h1 className="text-4xl font-bold text-red-700 mb-4">Become Our Member Today!</h1>
+              <h1 className="text-4xl font-bold mb-4" style={{ color: SECONDARY }}>Become Our Member Today!</h1>
               <p className="text-lg text-gray-700 mb-6">
                 Join the Japan-Bangladesh Chamber of Commerce and Industry (JBCCI) and unlock exclusive opportunities for networking, business growth, and international collaboration. Be a part of our vibrant community!
               </p>
               <Link
                 to="/membership-form"
-                className="inline-flex items-center px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold text-lg shadow"
+                className="inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg shadow"
+                style={{ background: PRIMARY, color: "#fff" }}
               >
                 Become Our Member Today
               </Link>
@@ -81,7 +85,7 @@ const MembershipPage: React.FC = () => {
 
           {/* Office Placeholder Images */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-4">Check out our cool office</h2>
+            <h2 className="text-2xl font-bold text-center mb-4" style={{ color: PRIMARY }}>Check out our cool office</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {[1, 2, 3, 4, 5].map(i => (
                 <div key={i} className="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-4xl font-bold">
@@ -93,7 +97,7 @@ const MembershipPage: React.FC = () => {
 
           {/* Directors */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-6">Our Directors</h2>
+            <h2 className="text-2xl font-bold text-center mb-6" style={{ color: SECONDARY }}>Our Directors</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {directors.map((director, idx) => (
                 <div key={idx} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center">
@@ -111,7 +115,7 @@ const MembershipPage: React.FC = () => {
 
           {/* Objectives */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-4">Objectives of JBCCI</h2>
+            <h2 className="text-2xl font-bold text-center mb-4" style={{ color: PRIMARY }}>Objectives of JBCCI</h2>
             <ul className="max-w-xl mx-auto list-disc list-inside text-gray-700 space-y-2">
               <li>To collect and provide business information in Bangladesh and Japan.</li>
               <li>To promote the two-way trade and investment between Japan and Bangladesh.</li>
@@ -124,7 +128,7 @@ const MembershipPage: React.FC = () => {
           {/* Activities and Merits */}
           <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-xl font-bold mb-2 text-red-700">Our Activities</h2>
+              <h2 className="text-xl font-bold mb-2" style={{ color: PRIMARY }}>Our Activities</h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>Trade Fair: JBCCI members will get the opportunity to participate in Trade Fairs organized by JBCCI (in Bangladesh and in Japan) at a discounted rate.</li>
                 <li>Seminars/Workshops: JBCCI members will get the priority to join the Seminars/Workshops organized by JBCCI at special rate along with other facilities.</li>
@@ -132,7 +136,7 @@ const MembershipPage: React.FC = () => {
               </ul>
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2 text-green-700">Merits of JBCCI Membership</h2>
+              <h2 className="text-xl font-bold mb-2" style={{ color: SECONDARY }}>Merits of JBCCI Membership</h2>
               <ul className="list-disc list-inside text-gray-700 space-y-2">
                 <li>Information Services: JBCCI members will be provided with important business information services.</li>
                 <li>Export: For Bangladeshi Exporters, JBCCI will provide related information about Japanese Importers and necessary Market Information of Japan.</li>
@@ -142,8 +146,9 @@ const MembershipPage: React.FC = () => {
           </div>
 
           {/* Be Our Member */}
-          <div className="mb-12 text-center bg-gradient-to-r from-red-50 to-green-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-2">BE OUR MEMBER</h2>
+          <div className="mb-12 text-center rounded-2xl p-8"
+            style={{ background: "linear-gradient(to right, #edeafd, #fff8e3)" }}>
+            <h2 className="text-2xl font-bold mb-2" style={{ color: PRIMARY }}>BE OUR MEMBER</h2>
             <p className="text-gray-700 max-w-2xl mx-auto">
               Japan and Bangladesh are two friendly countries and this relationship has contributed in socio economic development, culture, education, infrastructure, know how transfer, trade, business migration, infrastructure development, SME, IT Business and human resource exchange with skill development, capacity building and in many areas.
             </p>
