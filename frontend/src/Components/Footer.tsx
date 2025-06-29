@@ -59,7 +59,7 @@ const Footer: React.FC = () => (
       </div>
       <div className="border-t border-[#e6aa05] mt-12 pt-8 flex flex-col md:flex-row justify-center items-center">
         <p className="text-sm text-center" style={{ color: "#eee" }}>
-          Japan Bangladesh Chamber of Commerce || Powered by Techknowgram Limited
+          © Japan Bangladesh Chamber of Commerce & Industry || Powered by Techknowgram Limited
         </p>
       </div>
     </div>
