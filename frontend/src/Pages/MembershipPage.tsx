@@ -17,26 +17,6 @@ import landingImage9 from '../assets/landing_page/9.jpg';
 import landingImage10 from '../assets/landing_page/10.jpg';
 import landingImage11 from '../assets/landing_page/11.jpg';
 
-// Import people images
-import tareqRafiBhuiyan from '../assets/people/Tareq_Rafi.jpg';
-import anwarShahid from '../assets/people/Anwar_Shahid.jpg';
-import hiroakiOura from '../assets/people/Hiroki_Oura.jpg';
-import mariaHowlader from '../assets/people/Mariya_Howladar.jpg';
-import yujiAndo from '../assets/people/Yuji_Ando.jpg';
-import kenjiKimura from '../assets/people/Kenji_Kimura.jpg';
-import jahangirAlamSharker from '../assets/people/Jahangir_Alam.jpg';
-import manabuSugawara from '../assets/people/Manabu_Sugawara.jpg';
-import nayeemurRahman from '../assets/people/Nayeemur_Rahman.jpg';
-import sharifulAlam from '../assets/people/Shariful_Alam.jpg';
-import mohammedSohel from '../assets/people/Mohammed_Sohel.jpg';
-import tariqulIslam from '../assets/people/Zaman_Tariqul_Islam.jpg';
-import islamBabu from '../assets/people/Ahmedul_Islam.jpg';
-import hiroshiUegaki from '../assets/people/Hiroshi_Uegaki.jpg';
-import rabiulAlam from '../assets/people/Rabiul_Alam.jpg';
-import atsushiHirakuri from '../assets/people/Atasuchi_Hirakuri.jpg';
-import asifChowdhury from '../assets/people/Asif_Chowdhury.jpg';
-import taheraAhsan from '../assets/people/Tahera_Ahsan.jpg';
-
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
 
@@ -53,99 +33,6 @@ const carouselImages = [
   landingImage9,
   landingImage10,
   landingImage11
-];
-
-const directors = [
-  { 
-    name: "Mr. Tareq Rafi Bhuiyan (Jun)", 
-    position: "President",
-    image: tareqRafiBhuiyan
-  },
-  { 
-    name: "Mr. Md. Anwar Shahid", 
-    position: "Vice President",
-    image: anwarShahid
-  },
-  { 
-    name: "Mr. Hiroaki Oura", 
-    position: "Vice President",
-    image: hiroakiOura
-  },
-  { 
-    name: "Ms. Maria Howlader FCA", 
-    position: "Secretary General",
-    image: mariaHowlader
-  },
-  { 
-    name: "Mr. Yuji Ando", 
-    position: "Joint Secretary General",
-    image: yujiAndo
-  },
-  { 
-    name: "Mr. Kenji Kimura", 
-    position: "Treasurer",
-    image: kenjiKimura
-  },
-  { 
-    name: "Mr. Md. Jahangir Alam Sharker", 
-    position: "Joint Treasurer",
-    image: jahangirAlamSharker
-  },
-  { 
-    name: "Mr. Manabu Sugawara", 
-    position: "Director",
-    image: manabuSugawara
-  },
-  { 
-    name: "Mr. Mohammed Sohel", 
-    position: "Director",
-    image: mohammedSohel
-  },
-  { 
-    name: "Mr. Md. Shariful Alam", 
-    position: "Director",
-    image: sharifulAlam
-  },
-  { 
-    name: "Mr. Nayeemur Rahman", 
-    position: "Director",
-    image: nayeemurRahman
-  },
-  { 
-    name: "Mr. Abu Zaman Md. Tariqul Islam", 
-    position: "Director",
-    image: tariqulIslam
-  },
-  { 
-    name: "Mr. AKM Ahmedul Islam BABU", 
-    position: "Director",
-    image: islamBabu
-  },
-  { 
-    name: "Mr. Hiroshi Uegaki", 
-    position: "Director",
-    image: hiroshiUegaki
-  },
-  { 
-    name: "Mr. Rabiul Alam", 
-    position: "Director",
-    image: rabiulAlam
-  },
-  { 
-    name: "Mr. Atsushi Hirakuri", 
-    position: "Director",
-    image: atsushiHirakuri
-  },
-  { 
-    name: "Mr. Asif A. Chowdhury", 
-    position: "Advisor to the Board",
-    image: asifChowdhury
-  },
-  { 
-    name: "Ms. Tahera Ahsan", 
-    position: "Executive Director",
-    image: taheraAhsan
-  }
 ];
 
 const MembershipPage: React.FC = () => {
@@ -176,15 +63,6 @@ const MembershipPage: React.FC = () => {
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index);
-  };
-
-  const getPositionColor = (position: string) => {
-    if (position.includes('President')) return SECONDARY;
-    if (position.includes('Secretary')) return PRIMARY;
-    if (position.includes('Treasurer')) return '#18c06e';
-    if (position.includes('Advisor')) return '#9005e6';
-    if (position.includes('Executive')) return '#0fdad8';
-    return '#666';
   };
 
   return (
@@ -323,45 +201,6 @@ const MembershipPage: React.FC = () => {
                     alt={`JBCCI Activity ${i + 1}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Directors */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-6" style={{ color: SECONDARY }}>Our Directors</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {directors.map((director, idx) => (
-                <div key={idx} className="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition-shadow">
-                  <div className="w-24 h-24 rounded-full mb-4 overflow-hidden border-4 border-white shadow-lg">
-                    {director.image ? (
-                      <img
-                        src={director.image}
-                        alt={director.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          // Fallback to placeholder if image fails to load
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                    ) : null}
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center text-3xl text-gray-400 font-bold">
-                      <span>Img</span>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{director.name}</h3>
-                    <p 
-                      className="text-sm font-medium"
-                      style={{ color: getPositionColor(director.position) }}
-                    >
-                      {director.position}
-                    </p>
-                  </div>
                 </div>
               ))}
             </div>
