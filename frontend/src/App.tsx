@@ -65,6 +65,10 @@ import taheraAhsan from './assets/people/Tahera_Ahsan.jpg';
 import LoginPage from './Pages/LoginPage';
 import MemberProfile from './Pages/MemberProfile';
 
+import landing_Image4 from './assets/landing_page/4.jpg';
+import landing_Image8 from './assets/landing_page/8.jpg';
+import landing_Image11 from './assets/landing_page/11.jpg';
+
 // THEME COLORS
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -401,8 +405,8 @@ function HomePage() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                  Press Img 1
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center overflow-hidden">
+                  <img src={landing_Image4} alt="Press 1" className="object-cover w-full h-32" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>Japanese Firms bullish on Bangladesh</h3>
                 <p className="text-gray-700 text-base">
@@ -410,8 +414,8 @@ function HomePage() {
                 </p>
               </div>
               <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                  Press Img 2
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center overflow-hidden">
+                  <img src={landing_Image8} alt="Press 2" className="object-cover w-full h-32" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2" style={{color: SECONDARY}}>Japanese Companies Want to Invest in BD</h3>
                 <p className="text-gray-700 text-base">
@@ -419,8 +423,8 @@ function HomePage() {
                 </p>
               </div>
               <div className="bg-[#f6f5fa] rounded-xl shadow-md p-6 flex flex-col items-center">
-                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400 font-bold">
-                  Press Img 3
+                <div className="w-full h-32 bg-gray-200 rounded-md mb-4 flex items-center justify-center overflow-hidden">
+                  <img src={landing_Image11} alt="Press 3" className="object-cover w-full h-32" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2" style={{color: PRIMARY}}>ICOSA holds SMEs seminar</h3>
                 <p className="text-gray-700 text-base">
