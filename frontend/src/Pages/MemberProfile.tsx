@@ -206,7 +206,7 @@ const MemberProfile = () => {
 
   return (
     <>
-      <Navbar showLoginButton={false} />
+      <Navbar showLoginButton={false} showLogoutButton={true} />
       <div className="min-h-screen bg-gray-50 pt-20">
         {/* Header inside profile (optional - could be removed if Navbar is enough) */}
         {/* <header className="bg-white shadow-sm border-b sticky top-0 z-40"> ... </header> */}

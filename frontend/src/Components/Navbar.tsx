@@ -6,7 +6,12 @@ import logo from '../assets/logo/logo.png';
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
 
-const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = true }) => {
+interface NavbarProps {
+  showLoginButton?: boolean;
+  showLogoutButton?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ showLoginButton = true, showLogoutButton = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isBoardDropdownOpen, setIsBoardDropdownOpen] = useState(false);
@@ -71,6 +76,15 @@ const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = tru
     boardTimer.current = setTimeout(() => setIsBoardDropdownOpen(false), 180);
   };
 
+  const handleLogin = () => {
+    navigate('/login_page');
+  };
+
+  const handleLogout = () => {
+    // Optionally clear auth/token here
+    navigate('/login_page');
+  };
+
   return (
     <header
       className={`
@@ -88,10 +102,14 @@ const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = tru
               className="h-16 w-16 rounded-full object-contain border-2 border-white shadow"
               style={{ background: "#fff" }}
             />
-            <div>
-              <span className="text-2xl font-bold tracking-tight" style={{ color: SECONDARY, letterSpacing: "-1px" }}>JBCCI</span>
-              <div className="text-sm hidden sm:block" style={{ color: "#eee" }}>Japan-Bangladesh Chamber</div>
-            </div>
+           <div>
+            <span className="text-xl font-bold tracking-tight block" style={{ color: SECONDARY, letterSpacing: "-1px" }}>
+              Japan-Bangladesh 
+            </span>
+            <span className="text-xl font-bold tracking-tight block" style={{ color: SECONDARY, letterSpacing: "-1px" }}>
+             Chamber of Commerce & Industry
+            </span>
+          </div>
           </div>
           <nav className="hidden md:flex space-x-9 items-center text-lg">
             <Link to="/" className="font-medium transition-colors duration-200" style={{ color: "#fff" }}>HOME</Link>
@@ -205,9 +223,18 @@ const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = tru
               <button
                 className="ml-4 px-6 py-2 font-semibold rounded-full transition-colors duration-200 shadow hover:shadow-lg"
                 style={{ background: SECONDARY, color: PRIMARY }}
-                onClick={() => navigate('/login_page')}
+                onClick={handleLogin}
               >
                 Login
+              </button>
+            )}
+            {showLogoutButton && (
+              <button
+                className="ml-2 px-6 py-2 font-semibold rounded-full transition-colors duration-200 shadow hover:shadow-lg"
+                style={{ background: '#e6aa05', color: '#fff' }}
+                onClick={handleLogout}
+              >
+                Logout
               </button>
             )}
           </nav>
@@ -237,10 +264,22 @@ const Navbar: React.FC<{ showLoginButton?: boolean }> = ({ showLoginButton = tru
                 style={{ background: SECONDARY, color: PRIMARY }}
                 onClick={() => {
                   setIsMenuOpen(false);
-                  navigate('/login_page');
+                  handleLogin();
                 }}
               >
                 Login
+              </button>
+            )}
+            {showLogoutButton && (
+              <button
+                className="block w-full mt-2 px-3 py-2 font-semibold rounded-full transition-colors duration-200 shadow"
+                style={{ background: '#e53e3e', color: '#fff' }}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  handleLogout();
+                }}
+              >
+                Logout
               </button>
             )}
           </div>
