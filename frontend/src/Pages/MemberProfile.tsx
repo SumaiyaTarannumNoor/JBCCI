@@ -433,7 +433,6 @@ const MemberProfile = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
