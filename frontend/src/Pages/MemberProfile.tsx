@@ -25,7 +25,9 @@ import {
   X
 } from 'lucide-react';
 import Navbar from '../Components/Navbar';
-import Footer from '../Components/Footer';
+
+// Import the Techknowgram logo
+import tkgLogo from '../assets/logo/tkg_logo.jpg';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -145,15 +147,19 @@ const MemberProfile = () => {
         </div>
 
         <div className="text-center mb-6">
-          <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <div className="text-xs lg:text-sm text-white px-2 py-1 rounded" style={{ backgroundColor: colors.success[500] }}>
-              93.1% Complete
-            </div>
+          {/* TKG Logo */}
+          <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full mx-auto mb-3 flex items-center justify-center bg-gray-100 overflow-hidden border border-gray-200">
+            <img
+              src={tkgLogo}
+              alt="Techknowgram Limited Logo"
+              className="object-contain w-16 h-16 lg:w-20 lg:h-20"
+              style={{ background: 'white' }}
+            />
           </div>
-          <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full mx-auto mb-2 flex items-center justify-center" style={{ backgroundColor: colors.primary[100] }}>
+          {/* <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full mx-auto mb-2 flex items-center justify-center" style={{ backgroundColor: colors.primary[100] }}>
             <Building2 className="w-6 h-6 lg:w-8 lg:h-8" style={{ color: colors.primary[600] }} />
-          </div>
-          <h3 className="font-semibold text-gray-800 text-sm lg:text-base">TECHKNOWGRAM LIMITED</h3>
+          </div> */}
+          <h2 className="font-semibold text-blue-800 text-sm lg:text-base">TECHKNOWGRAM LIMITED</h2>
         </div>
 
         <nav className="space-y-1">
