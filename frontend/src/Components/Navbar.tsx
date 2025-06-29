@@ -103,18 +103,24 @@ const Navbar: React.FC<NavbarProps> = ({ showLoginButton = true, showLogoutButto
               className="h-12 w-12 rounded-full object-contain border-2 border-white shadow-sm"
               style={{ background: "#fff" }}
             />
-            <div className="hidden sm:block">
+            <div>
               <span
                 className="font-semibold tracking-tight block leading-tight"
-                style={{ color: SECONDARY, letterSpacing: "-0.5px", fontSize: "11px" }}
+                style={{ color: SECONDARY, letterSpacing: "-0.5px", fontSize: "12px" }}
               >
                 Japan-Bangladesh
               </span>
               <span
                 className="font-semibold tracking-tight block leading-tight"
-                style={{ color: SECONDARY, letterSpacing: "-0.5px", fontSize: "11px" }}
+                style={{ color: SECONDARY, letterSpacing: "-0.5px", fontSize: "12px" }}
               >
-                Chamber of Commerce and Industry
+                Chamber of Commerce
+              </span>
+              <span
+                className="font-semibold tracking-tight block leading-tight"
+                style={{ color: SECONDARY, letterSpacing: "-0.5px", fontSize: "12px" }}
+              >
+                and Industry
               </span>
             </div>
           </div>
