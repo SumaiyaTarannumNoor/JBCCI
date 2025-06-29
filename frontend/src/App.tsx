@@ -436,99 +436,98 @@ function HomePage() {
         </section>
 
         {/* Board Members Section */}
-        <section id="board" className="py-20" style={{ background: "#f9f8ff" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: PRIMARY }}>
-                Board Members 2024-2026
-              </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Meet our distinguished board members who guide JBCCI's vision and strategic direction.
-              </p>
-            </div>
-            {/* grid-cols-2 for all small screens and devices */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {boardMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
-                  <div className="relative mb-4">
-                    {member.image ? (
-                      <div className="w-20 h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            const fallback = target.nextElementSibling as HTMLElement;
-                            if (fallback) fallback.style.display = 'flex';
-                          }}
-                        />
-                        <div
-                          className={`w-full h-full rounded-full flex items-center justify-center text-white text-lg font-bold hidden ${
-                            member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
-                          }`}
-                          style={{
-                            background: member.position.includes('PRESIDENT')
-                              ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
-                              : member.position.includes('VICE PRESIDENT')
-                                ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
-                                : member.position.includes('SECRETARY')
-                                  ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
-                                  : member.position.includes('TREASURER')
-                                    ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
-                                    : member.position.includes('ADVISOR')
-                                      ? `linear-gradient(135deg, #b15ef9, #8246e6)`
-                                      : member.position.includes('EXECUTIVE')
-                                        ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
-                                        : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
-                          }}
-                        >
-                          {member.initials}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
-                        member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
-                      }`}
-                        style={{
-                          background: member.position.includes('PRESIDENT')
-                            ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
-                            : member.position.includes('VICE PRESIDENT')
-                              ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
-                              : member.position.includes('SECRETARY')
-                                ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
-                                : member.position.includes('TREASURER')
-                                  ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
-                                  : member.position.includes('ADVISOR')
-                                    ? `linear-gradient(135deg, #b15ef9, #8246e6)`
-                                    : member.position.includes('EXECUTIVE')
-                                      ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
-                                      : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
-                        }}>
-                        {member.initials}
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
-                  <p className={`text-xs font-medium mb-2`} style={{
-                    color:
-                      member.position.includes('PRESIDENT') ? SECONDARY :
-                        member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
-                          member.position.includes('SECRETARY') ? PRIMARY :
-                            member.position.includes('TREASURER') ? "#18c06e" :
-                              member.position.includes('ADVISOR') ? "#9005e6" :
-                                member.position.includes('EXECUTIVE') ? "#0fdad8" :
-                                  "#222"
-                  }}>
-                    {member.position}
-                  </p>
+<section id="board" className="py-20" style={{ background: "#f9f8ff" }}>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: PRIMARY }}>
+        Board Members 2024-2026
+      </h2>
+      <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+        Meet our distinguished board members who guide JBCCI's vision and strategic direction.
+      </p>
+    </div>
+    {/* Responsive grid: always 2 cols on very small; 3 on lg, 4 on xl */}
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {boardMembers.map((member, index) => (
+        <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group text-center">
+          <div className="relative mb-4">
+            {member.image ? (
+              <div className="w-20 h-20 rounded-full mx-auto overflow-hidden border-4 border-white shadow-lg">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                <div
+                  className={`w-full h-full rounded-full flex items-center justify-center text-white text-lg font-bold hidden ${
+                    member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+                  }`}
+                  style={{
+                    background: member.position.includes('PRESIDENT')
+                      ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                      : member.position.includes('VICE PRESIDENT')
+                        ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                        : member.position.includes('SECRETARY')
+                          ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                          : member.position.includes('TREASURER')
+                            ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                            : member.position.includes('ADVISOR')
+                              ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                              : member.position.includes('EXECUTIVE')
+                                ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                                : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                  }}
+                >
+                  {member.initials}
                 </div>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <div className={`w-20 h-20 rounded-full mx-auto flex items-center justify-center text-white text-lg font-bold ${
+                member.position.includes('PRESIDENT') ? 'bg-gradient-to-br' : ''
+              }`}
+                style={{
+                  background: member.position.includes('PRESIDENT')
+                    ? `linear-gradient(135deg, ${SECONDARY}, ${PRIMARY})`
+                    : member.position.includes('VICE PRESIDENT')
+                      ? `linear-gradient(135deg, ${SECONDARY}, #ecd86d)`
+                      : member.position.includes('SECRETARY')
+                        ? `linear-gradient(135deg, ${PRIMARY}, #4b3cff)`
+                        : member.position.includes('TREASURER')
+                          ? `linear-gradient(135deg, #6adf92, ${SECONDARY})`
+                          : member.position.includes('ADVISOR')
+                            ? `linear-gradient(135deg, #b15ef9, #8246e6)`
+                            : member.position.includes('EXECUTIVE')
+                              ? `linear-gradient(135deg, #0fdad8, #48b0a7)`
+                              : `linear-gradient(135deg, #a5b4fc, #d8b4fe)`
+                }}>
+                {member.initials}
+              </div>
+            )}
           </div>
-        </section>
-
+          <h3 className="text-sm font-semibold text-gray-900 mb-1 leading-tight">{member.name}</h3>
+          <p className={`text-xs font-medium mb-2`} style={{
+            color:
+              member.position.includes('PRESIDENT') ? SECONDARY :
+                member.position.includes('VICE PRESIDENT') ? "#e6aa05" :
+                  member.position.includes('SECRETARY') ? PRIMARY :
+                    member.position.includes('TREASURER') ? "#18c06e" :
+                      member.position.includes('ADVISOR') ? "#9005e6" :
+                        member.position.includes('EXECUTIVE') ? "#0fdad8" :
+                          "#222"
+          }}>
+            {member.position}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* Members Section */}
         <section id="members" className="py-20 bg-white">
