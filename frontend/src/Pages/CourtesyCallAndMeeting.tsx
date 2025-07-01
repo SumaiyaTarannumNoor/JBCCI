@@ -4,10 +4,10 @@ import Footer from '../Components/Footer';
 
 // Import meeting images
 import meeting1 from '../assets/meeting/1.jpg';
-import meeting2 from '../assets/meeting/2.jpg';
-import meeting3 from '../assets/meeting/3.jpg';
-import meeting4 from '../assets/meeting/4.jpg';
-import meeting5 from '../assets/meeting/5.jpg';
+import meeting2 from '../assets/seminar/seminar1/1.jpg';
+import meeting3 from '../assets/seminar/seminar2/2.jpg';
+import meeting4 from '../assets/seminar/seminar2/4.jpg';
+import meeting5 from '../assets/seminar/seminar1/5.jpg';
 
 // Import seminar1 images
 import seminar1_1 from '../assets/seminar/seminar1/1.jpg';

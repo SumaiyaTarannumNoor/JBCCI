@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 // Import images from assets/visit (adjust the filenames as needed)
 import visit1 from '../assets/visit/1.jpg';
 import visit2 from '../assets/visit/2.jpg';
-import visit3 from '../assets/visit/3.jpg';
+import visit3 from '../assets/visit/1.jpg';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";

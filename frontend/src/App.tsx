@@ -69,6 +69,14 @@ import landing_Image4 from './assets/landing_page/4.jpg';
 import landing_Image8 from './assets/landing_page/8.jpg';
 import landing_Image11 from './assets/landing_page/11.jpg';
 
+import NetworkGatheringProgram from './Pages/NetworkGatheringProgram';
+import BusinessExcellenceAward from './Pages/BusinessExcellenceAward';
+import ConferenceAndSeminar from './Pages/ConferenceAndSeminar';
+import FactoryProjectVisitProgram from './Pages/FactoryProjectVisitProgram';
+import FactoryVisitHSIA from './Pages/FactoryVisitHSIA';
+import FactoryVisitJuly22 from './Pages/FactoryVisitJuly22';
+import CourtesyCallAndMeeting from './Pages/CourtesyCallAndMeeting';
+
 // THEME COLORS
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
@@ -740,6 +748,14 @@ function App() {
         <Route path="/board-of-directors/2018-20" element={<BoardOfDirectors2018_20 />} />
         <Route path="/login_page" element={<LoginPage />} />
         <Route path="/member_profile" element={<MemberProfile />} />
+        {/* Special JBCCI programs and galleries */}
+        <Route path="/network-gathering-program" element={<NetworkGatheringProgram />} />
+        <Route path="/business-excellence-award" element={<BusinessExcellenceAward />} />
+        <Route path="/conference-and-seminar" element={<ConferenceAndSeminar />} />
+        <Route path="/factory-project-visit-program" element={<FactoryProjectVisitProgram />} />
+        <Route path="/factory-visit-hsia" element={<FactoryVisitHSIA />} />
+        <Route path="/factory-visit-july22" element={<FactoryVisitJuly22 />} />
+        <Route path="/courtesy-call-and-meeting" element={<CourtesyCallAndMeeting />} />
       </Routes>
     </Router>
   );

@@ -7,7 +7,7 @@ import visitImg1 from '../assets/visit/visit1/1.jpg';
 import visitImg2 from '../assets/visit/visit1/2.jpg';
 import visitImg3 from '../assets/visit/visit1/3.jpg';
 import visitImg4 from '../assets/visit/visit1/4.jpg';
-import visitImg5 from '../assets/visit/visit1/5.jpg';
+import visitImg5 from '../assets/visit/visit1/1.jpg';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";

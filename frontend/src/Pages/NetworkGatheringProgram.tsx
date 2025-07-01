@@ -3,10 +3,10 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 // Example images (replace with your actual image imports)
-import gathering1 from '../assets/news/network_gathering1.jpg';
-import gathering2 from '../assets/news/network_gathering2.jpg';
-import gathering3 from '../assets/news/network_gathering3.jpg';
-import gathering4 from '../assets/news/network_gathering4.jpg';
+import gathering1 from '../assets/news/1.jpg';
+import gathering2 from '../assets/news/2.jpg';
+import gathering3 from '../assets/news/3.jpg';
+import gathering4 from '../assets/news/1.jpg';
 
 const PRIMARY = "#18069e";
 const SECONDARY = "#e6aa05";
